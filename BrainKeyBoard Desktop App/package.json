@@ -1,0 +1,14 @@
+{
+  "name": "brainkeyboard",
+  "version": "1.0.0",
+  "description": "Brain Keyboard Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Chirag V. Bellara, Raj S. Madheshia, Pranali S. Patil",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^6.0.3"
+  }
+}
