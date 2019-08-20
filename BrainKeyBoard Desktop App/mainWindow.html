@@ -8,10 +8,91 @@
 body{
     background-color: cadetblue
 }
+.mainwin{
+    margin-left: 20px;
+    scroll-behavior: auto;
+}
+.buttonattr{
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 40px 16px 40px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  align-items: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#textscreen{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
 </style>
 <body>  
-    <h1>
-        Brain Interface keyboards
-    </h1>
+    <div class="mainwin">
+        <textarea name="screen" id="textscreen" cols="100" rows="10" autofocus>
+        </textarea>
+        <form>
+            <div>
+                <button type="button" class="buttonattr button1">A</button>
+                <button type="button" class="buttonattr button1">B</button>
+                <button type="button" class="buttonattr button1">C</button>
+                <button type="button" class="buttonattr button1">D</button>
+                <button type="button" class="buttonattr button1">E</button>
+                <button type="button" class="buttonattr button1">F</button>
+                
+            </div>
+            <div>
+                <button type="button" class="buttonattr button1">G</button>
+                <button type="button" class="buttonattr button1">H</button>
+                <button type="button" class="buttonattr button1">I</button>
+                <button type="button" class="buttonattr button1">J</button>
+                <button type="button" class="buttonattr button1">K</button>
+                <button type="button" class="buttonattr button1">L</button>
+                
+            </div>
+            <div>
+                <button type="button" class="buttonattr button1">M</button>
+                <button type="button" class="buttonattr button1">N</button>
+                <button type="button" class="buttonattr button1">O</button>
+                <button type="button" class="buttonattr button1">P</button>
+                <button type="button" class="buttonattr button1">Q</button>
+                <button type="button" class="buttonattr button1">R</button>
+                
+            </div>
+            <div>
+                <button type="button" class="buttonattr button1">S</button>
+                <button type="button" class="buttonattr button1">T</button>
+                <button type="button" class="buttonattr button1">U</button>
+                <button type="button" class="buttonattr button1">V</button>
+                <button type="button" class="buttonattr button1">W</button>
+                <button type="button" class="buttonattr button1">X</button>
+            </div>
+            <div>
+                <button type="button" class="buttonattr button1">Y</button>
+                <button type="button" class="buttonattr button1">Z</button>
+                <button type="button" class="buttonattr button1">Space</button>
+                <button type="button" class="buttonattr button1">Enter</button>
+                <button type="button" class="buttonattr button1">.</button>
+                <button type="button" class="buttonattr button1">,</button>
+            </div>  
+        </form>
+    </div>
 </body>
 </html>
