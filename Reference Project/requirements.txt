@@ -1,0 +1,8 @@
+numpy
+scipy
+matplotlib
+sklearn
+mne
+pylsl
+websocket-client==0.48.0
+
