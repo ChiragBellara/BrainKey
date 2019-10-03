@@ -13,10 +13,12 @@ with open('data.json', 'w', encoding='utf-8') as f:
     with open("outputLog.txt") as out:
     #print(type(out))
         data = out.readlines()
-        print(data)
+        #print(data)
+        print(type(data))
         for line in data:
-            line = line.replace('"','')
-            #print(line,type(line))
+            inpData = line.split(',')
+            print(inpData,type(inpData
+            ))
         json.dump(data,f, ensure_ascii=False, indent=4*' ')
 
 # with open("outputLog.txt") as out:
