@@ -15,3 +15,58 @@
 '{"blinkStrength":208}'
 '{"eSense":{"attention":60,"meditation":54},"eegPower":{"delta":2255975,"theta":273867,"lowAlpha":15025,"highAlpha":69487,"lowBeta":20465,"highBeta":27743,"lowGamma":12051,"highGamma":3791},"poorSignalLevel":26}'
 '{"eSense":{"attention":41,"meditation":40},"eegPower":{"delta":2629790,"theta":1133542,"lowAlpha":25631,"highAlpha":91222,"lowBeta":58259,"highBeta":56892,"lowGamma":23483,"highGamma":46421},"poorSignalLevel":0}'
+
+
+
+
+
+
+
+
+D:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn>python neurosky_telnet.py
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"poorSignalLevel":200,"status":"scanning"}
+<class 'str'>
+{"eSense":{"attention":0,"meditation":0},"eegPower":{"delta":486025,"theta":128157,"lowAlpha":16340,"highAlpha":5453,"lowBeta":12220,"highBeta":9039,"lowGamma":2837,"highGamma":744},"poorSignalLevel":0}
+<class 'str'>
+{"eSense":{"attention":0,"meditation":0},"eegPower":{"delta":109449,"theta":69313,"lowAlpha":14718,"highAlpha":31655,"lowBeta":15762,"highBeta":12282,"lowGamma":6054,"highGamma":6869},"poorSignalLevel":0}
+<class 'str'>
+{"blinkStrength":91}
+<class 'str'>
+{"eSense":{"attention":0,"meditation":0},"eegPower":{"delta":156211,"theta":195288,"lowAlpha":118584,"highAlpha":91312,"lowBeta":29381,"highBeta":22926,"lowGamma":7325,"highGamma":6595},"poorSignalLevel":0}
+<class 'str'>
+{"blinkStrength":56}
+<class 'str'>
+{"eSense":{"attention":41,"meditation":43},"eegPower":{"delta":1056794,"theta":156292,"lowAlpha":45995,"highAlpha":21879,"lowBeta":16615,"highBeta":16348,"lowGamma":3447,"highGamma":5308},"poorSignalLevel":0}
+<class 'str'>
+{"eSense":{"attention":29,"meditation":47},"eegPower":{"delta":42641,"theta":51163,"lowAlpha":8892,"highAlpha":10357,"lowBeta":5197,"highBeta":3727,"lowGamma":2534,"highGamma":4024},"poorSignalLevel":0}
+<class 'str'>
+{"eSense":{"attention":53,"meditation":61},"eegPower":{"delta":25516,"theta":10766,"lowAlpha":1938,"highAlpha":13456,"lowBeta":3764,"highBeta":3689,"lowGamma":2982,"highGamma":1732},"poorSignalLevel":0}
+<class 'str'>
+{"blinkStrength":57}
+<class 'str'>
+{"blinkStrength":89}
+<class 'str'>
+{"blinkStrength":75}
+<class 'str'>
+{"eSense":{"attention":35,"meditation":54},"eegPower":{"delta":1109096,"theta":1060990,"lowAlpha":140582,"highAlpha":45509,"lowBeta":92982,"highBeta":31358,"lowGamma":31093,"highGamma":14786},"poorSignalLevel":0}
+<class 'str'>
+{"blinkStrength":104}
+<class 'str'>
+{"eSense":{"attention":37,"meditation":64},"eegPower":{"delta":785225,"theta":55225,"lowAlpha":49659,"highAlpha":15800,"lowBeta":6194,"highBeta":7960,"lowGamma":3811,"highGamma":2327},"poorSignalLevel":0}

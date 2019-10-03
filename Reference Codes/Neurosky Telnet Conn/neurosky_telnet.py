@@ -19,13 +19,22 @@ if len(sys.argv)>1:
 eSenseDict={'attention':0, 'meditation':0}
 waveDict={'lowGamma':0, 'highGamma':0, 'highAlpha':0, 'delta':0, 'highBeta':0, 'lowAlpha':0, 'lowBeta':0, 'theta':0}
 signalLevel=0
-
+csvFile = open('output.csv','a')
 while i<100:
     blinkStrength=0
     line=tn.read_until(b'\r')
     if len(line) > 20:	
         line = line.decode('ascii')
+        #print(type(line))
         print(line)
+        if line[3] == 'e':
+            dict=json.loads(line['eSense'])
+        else:
+            dict=json.loads(line)
+        #print(dict['blinkStrength'],type(dict))        
+        csvwriter=csv.writer(csvFile)
+        csvwriter.writerow(dict.values())
+csvFile.close()
         
 tn.close()
 outfptr.close()

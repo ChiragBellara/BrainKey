@@ -19,6 +19,7 @@ def get_words(path):
 
 words = get_words("mostusedwords.csv")
 autocomplete = AutoComplete(words=words)
-inp = str(input("Input: "))
-results = autocomplete.search(word=inp)
-print(results)
+while True:
+    inp = str(input("Input: "))
+    results = autocomplete.search(word=inp)
+    print(results)
