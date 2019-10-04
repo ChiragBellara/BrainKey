@@ -21,3 +21,12 @@
 2019-10-03 15:48:14.4455|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
 2019-10-03 15:48:40.1157|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
 2019-10-03 16:00:36.0922|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:28:15.4025|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:30:58.8653|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:32:22.8496|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:37:44.5482|INFO|ThinkGear.Libraries.Bridge|Device connect fail. Retrying...
+2019-10-04 17:37:52.9201|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:38:15.0947|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:41:07.4358|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:42:29.1163|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.
+2019-10-04 17:46:11.6192|INFO|ThinkGear.Libraries.Bridge|Device COM5 connected.

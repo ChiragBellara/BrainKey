@@ -19,7 +19,7 @@ if len(sys.argv)>1:
 eSenseDict={'attention':0, 'meditation':0}
 waveDict={'lowGamma':0, 'highGamma':0, 'highAlpha':0, 'delta':0, 'highBeta':0, 'lowAlpha':0, 'lowBeta':0, 'theta':0}
 signalLevel=0
-csvFile = open('output.csv','a')
+csvFile = open('Anurag_output.csv','w')
 while i<100:
     blinkStrength=0
     line=tn.read_until(b'\r')

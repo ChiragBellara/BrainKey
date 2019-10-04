@@ -1,0 +1,83 @@
+200,idle
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+200,scanning
+"{'attention': 0, 'meditation': 0}","{'delta': 146177, 'theta': 109394, 'lowAlpha': 29168, 'highAlpha': 44706, 'lowBeta': 9900, 'highBeta': 22971, 'lowGamma': 13232, 'highGamma': 39776}",26
+"{'attention': 0, 'meditation': 0}","{'delta': 923980, 'theta': 439528, 'lowAlpha': 52246, 'highAlpha': 12802, 'lowBeta': 46167, 'highBeta': 36939, 'lowGamma': 9116, 'highGamma': 255315}",26
+99
+"{'attention': 0, 'meditation': 0}","{'delta': 73240, 'theta': 33124, 'lowAlpha': 2659, 'highAlpha': 10120, 'lowBeta': 3697, 'highBeta': 4473, 'lowGamma': 1863, 'highGamma': 6808}",51
+"{'attention': 0, 'meditation': 0}","{'delta': 1155316, 'theta': 80609, 'lowAlpha': 11770, 'highAlpha': 36538, 'lowBeta': 40367, 'highBeta': 35924, 'lowGamma': 10585, 'highGamma': 61642}",51
+"{'attention': 0, 'meditation': 0}","{'delta': 2040759, 'theta': 88301, 'lowAlpha': 316517, 'highAlpha': 110269, 'lowBeta': 10290, 'highBeta': 18537, 'lowGamma': 8895, 'highGamma': 87066}",0
+"{'attention': 0, 'meditation': 0}","{'delta': 1957303, 'theta': 480733, 'lowAlpha': 437614, 'highAlpha': 426480, 'lowBeta': 54033, 'highBeta': 75161, 'lowGamma': 48716, 'highGamma': 432206}",0
+"{'attention': 0, 'meditation': 0}","{'delta': 687139, 'theta': 52551, 'lowAlpha': 15791, 'highAlpha': 17104, 'lowBeta': 17477, 'highBeta': 7879, 'lowGamma': 2853, 'highGamma': 54883}",26
+"{'attention': 0, 'meditation': 0}","{'delta': 115432, 'theta': 136082, 'lowAlpha': 59953, 'highAlpha': 4921, 'lowBeta': 25307, 'highBeta': 4692, 'lowGamma': 3723, 'highGamma': 27930}",26
+121
+"{'attention': 0, 'meditation': 0}","{'delta': 1744222, 'theta': 1267220, 'lowAlpha': 766182, 'highAlpha': 103504, 'lowBeta': 154598, 'highBeta': 270193, 'lowGamma': 181824, 'highGamma': 628537}",0
+125
+"{'attention': 43, 'meditation': 30}","{'delta': 458206, 'theta': 199981, 'lowAlpha': 57207, 'highAlpha': 32269, 'lowBeta': 24281, 'highBeta': 22118, 'lowGamma': 3839, 'highGamma': 97672}",0
+130
+"{'attention': 43, 'meditation': 30}","{'delta': 205876, 'theta': 37188, 'lowAlpha': 4894, 'highAlpha': 5939, 'lowBeta': 1983, 'highBeta': 4658, 'lowGamma': 1168, 'highGamma': 16020}",26
+78
+39
+"{'attention': 50, 'meditation': 35}","{'delta': 122381, 'theta': 11218, 'lowAlpha': 7149, 'highAlpha': 8682, 'lowBeta': 467, 'highBeta': 2456, 'lowGamma': 602, 'highGamma': 11484}",0
+64
+"{'attention': 50, 'meditation': 35}","{'delta': 862264, 'theta': 60660, 'lowAlpha': 95541, 'highAlpha': 17785, 'lowBeta': 16399, 'highBeta': 18128, 'lowGamma': 11333, 'highGamma': 3038}",51
+"{'attention': 48, 'meditation': 34}","{'delta': 322992, 'theta': 9156, 'lowAlpha': 6335, 'highAlpha': 2721, 'lowBeta': 2260, 'highBeta': 1018, 'lowGamma': 439, 'highGamma': 6535}",0
+35
+82
+42
+"{'attention': 26, 'meditation': 24}","{'delta': 200046, 'theta': 97447, 'lowAlpha': 31601, 'highAlpha': 21989, 'lowBeta': 8294, 'highBeta': 4914, 'lowGamma': 1234, 'highGamma': 32549}",0
+34
+41
+"{'attention': 24, 'meditation': 11}","{'delta': 84948, 'theta': 26430, 'lowAlpha': 2606, 'highAlpha': 4734, 'lowBeta': 3369, 'highBeta': 2914, 'lowGamma': 329, 'highGamma': 8082}",0
+35
+40
+44
+55
+93
+"{'attention': 29, 'meditation': 14}","{'delta': 27376, 'theta': 14601, 'lowAlpha': 10427, 'highAlpha': 14195, 'lowBeta': 4596, 'highBeta': 2945, 'lowGamma': 1529, 'highGamma': 7878}",0
+41
+69
+92
+"{'attention': 40, 'meditation': 20}","{'delta': 166785, 'theta': 94340, 'lowAlpha': 26627, 'highAlpha': 22011, 'lowBeta': 3488, 'highBeta': 10157, 'lowGamma': 1611, 'highGamma': 28171}",0
+37
+34
+"{'attention': 40, 'meditation': 21}","{'delta': 128412, 'theta': 19132, 'lowAlpha': 7275, 'highAlpha': 3989, 'lowBeta': 1838, 'highBeta': 896, 'lowGamma': 453, 'highGamma': 8806}",0
+84
+32
+43
+102
+108
+"{'attention': 53, 'meditation': 26}","{'delta': 495483, 'theta': 49456, 'lowAlpha': 21566, 'highAlpha': 33177, 'lowBeta': 72798, 'highBeta': 17879, 'lowGamma': 12151, 'highGamma': 20681}",0
+43
+55
+61
+"{'attention': 37, 'meditation': 14}","{'delta': 299244, 'theta': 59472, 'lowAlpha': 21027, 'highAlpha': 3182, 'lowBeta': 7784, 'highBeta': 2443, 'lowGamma': 1225, 'highGamma': 25323}",0
+33
+35
+40
+42
+"{'attention': 43, 'meditation': 13}","{'delta': 38381, 'theta': 65041, 'lowAlpha': 6650, 'highAlpha': 23454, 'lowBeta': 8284, 'highBeta': 8621, 'lowGamma': 2305, 'highGamma': 30077}",0
+38
+36
+37
+42
+"{'attention': 43, 'meditation': 10}","{'delta': 1162017, 'theta': 923145, 'lowAlpha': 234802, 'highAlpha': 154507, 'lowBeta': 49169, 'highBeta': 44623, 'lowGamma': 20335, 'highGamma': 131333}",0
+33
+69
+107
+"{'attention': 24, 'meditation': 13}","{'delta': 1647160, 'theta': 891607, 'lowAlpha': 533768, 'highAlpha': 181590, 'lowBeta': 62341, 'highBeta': 102880, 'lowGamma': 42272, 'highGamma': 133186}",0
+44
+39
+32
+"{'attention': 40, 'meditation': 17}","{'delta': 176026, 'theta': 21322, 'lowAlpha': 9726, 'highAlpha': 5858, 'lowBeta': 3135, 'highBeta': 2578, 'lowGamma': 1603, 'highGamma': 13487}",0
+37
