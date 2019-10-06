@@ -1,13 +1,15 @@
 import csv
 from fast_autocomplete.misc import read_csv_gen
 from fast_autocomplete import AutoComplete
+import os
 
 
 def get_words(path):
-    csv_gen = read_csv_gen(path, csv_func=csv.DictReader)
+    filepath = os.path.join(path,"mostusedwords.csv")
+    csv_gen = read_csv_gen(filepath, csv_func=csv.DictReader)
     words = {}
     for line in csv_gen:
-        make = line['make']
+        make = line['wordList']
         local_words = ['{}'.format(make)]
         while local_words:
             word = local_words.pop()
@@ -17,9 +19,15 @@ def get_words(path):
             words[make] = {}
     return words
 
-words = get_words("../Prediction_Module/")
+words = get_words("Wordlists/")
 autocomplete = AutoComplete(words=words)
+firstChar = str(input())
+results = autocomplete.search(word=firstChar)
+print(results)
+currentString = firstChar
 while True:
-    inp = str(input("Input: "))
-    results = autocomplete.search(word=inp)
+    inp = str(input())
+    currentString = currentString+inp
+    results = autocomplete.search(word=currentString)
     print(results)
+    
