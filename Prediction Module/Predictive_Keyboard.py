@@ -17,7 +17,7 @@ def get_words(path):
             words[make] = {}
     return words
 
-words = get_words("mostusedwords.csv")
+words = get_words("../Prediction_Module/")
 autocomplete = AutoComplete(words=words)
 while True:
     inp = str(input("Input: "))
