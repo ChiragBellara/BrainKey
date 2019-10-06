@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Brain Keyboard</title>
+    <script type="text/javascript" src="mainscript.js"></script>
+    <script type="text/javascript" src="pythonconnection.js"></script>
+</head>
+<style>
+body{
+    background-color: cadetblue
+}
+.mainwin{
+    margin-left: 20px;
+    scroll-behavior: auto;
+}
+.buttonattr{
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 40px 16px 40px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  align-items: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  
+}
+
+#textscreen{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+.formarea{
+    
+    padding:10px;
+    align-items: center;
+    display: inline
+}
+#firstrow,#secondrow, #thirdrow,#forthrow, #fifthrow{
+    padding: 5px;
+    width:560px;
+    display:flex;
+    justify-content:space-between;
+}
+#firstrow_1,#secondrow_1, #thirdrow_1,#forthrow_1, #fifthrow_1, #firstrow_2,#secondrow_2, #thirdrow_2,#forthrow_2, #fifthrow_2{
+    padding: 10px;
+}
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+.block_container{
+    display: flex;
+    justify-content:left;
+}
+.prediction_box{
+    
+    background: #4CAF50;
+    display: inline;
+}
+.prediction{
+    width: 250px;
+    min-width: 250px;
+}
+</style>
+
+<body onload="first_opt()" onkeypress="myFunction(event)">
+    <h1>Brain Interface Keyboard</h1>  
+    <div class="mainwin">
+        <textarea name="screen" id="textscreen" cols="100" rows="10" >
+        </textarea>
+    </div>
+    <div class="block_container">
+        <form class="formarea">
+            <div id="firstrow" tabindex="1">
+                <div id="firstrow_1">
+                    <button type="button" id="a" class="buttonattr button1">A</button>
+                    <button type="button" id="b" class="buttonattr button1">B</button>
+                    <button type="button" id="c" class="buttonattr button1">C</button>
+                </div>
+                
+                <div id="firstrow_2">
+                    <button type="button" id="d" class="buttonattr button1">D</button>
+                    <button type="button" id="e" class="buttonattr button1">E</button>
+                    <button type="button" id="f" class="buttonattr button1">F</button>
+                </div>
+            </div>
+    
+            <div id="secondrow">
+                <div id="secondrow_1">
+                    <button type="button" id="g" class="buttonattr button1">G</button>
+                    <button type="button" id="h" class="buttonattr button1">H</button>
+                    <button type="button" id="i" class="buttonattr button1">I</button>
+                </div>
+                <div id="secondrow_2">
+                    <button type="button" id="j" class="buttonattr button1">J</button>
+                    <button type="button" id="k" class="buttonattr button1">K</button>
+                    <button type="button" id="l" class="buttonattr button1">L</button>
+                </div>
+              
+            </div>
+            <div id="thirdrow">
+                <div id="thirdrow_1">
+                    <button type="button" id="m" class="buttonattr button1">M</button>
+                    <button type="button" id="n" class="buttonattr button1">N</button>
+                    <button type="button" id="o" class="buttonattr button1">O</button>
+                </div>
+                <div id="thirdrow_2">
+                    <button type="button" id="p" class="buttonattr button1">P</button>
+                    <button type="button" id="q" class="buttonattr button1">Q</button>
+                    <button type="button" id="r" class="buttonattr button1">R</button>
+                </div>
+                
+            
+                
+            </div>
+            <div id="forthrow">
+                <div id="forthrow_1">
+                    <button type="button" id="s" class="buttonattr button1">S</button>
+                    <button type="button" id="t" class="buttonattr button1">T</button>
+                    <button type="button" id="u" class="buttonattr button1">U</button>
+                </div>
+                <div id="forthrow_2">
+                    <button type="button" id="v" class="buttonattr button1">V</button>
+                    <button type="button" id="w" class="buttonattr button1">W</button>
+                    <button type="button" id="x" class="buttonattr button1">X</button>
+                </div>
+                
+                
+            </div>
+            <div id="fifthrow">
+                <div id="fifthrow_1">
+                    <button type="button" id="y" class="buttonattr button1">Y</button>
+                    <button type="button" id="z" class="buttonattr button1">Z</button>
+                    <button type="button" id="space" class="buttonattr button1">Space</button>
+                </div>
+                <div id="fifthrow_2">
+                    <button type="button" id="enter" class="buttonattr button1">Help</button>
+                    <button type="button" id="." class="buttonattr button1">.</button>
+                    <button type="button" id="," class="buttonattr button1">,</button>
+                </div>
+                
+            </div>  
+        </form>
+        <div class="prediction_box">
+            <div class="prediction">
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
