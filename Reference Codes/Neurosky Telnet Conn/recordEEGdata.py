@@ -7,8 +7,8 @@ from telnetlib import Telnet
 LOGFILE = 'logfile.log'
 logging.basicConfig(filename=LOGFILE, format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG)
 
-EEG_FILE = 'eegData.csv'
-BLINK_FILE = 'blinkData.csv'
+EEG_FILE = 'eegDataRAJ.csv'
+BLINK_FILE = 'blinkDataRAJ.csv'
 TGHOST = "localhost"
 TGPORT = 13854
 CONFSTRING = '{"enableRawOutput": false, "format": "Json"}'
@@ -68,12 +68,12 @@ class ThinkGearConnection():
 
 
     def record_data(self):
-        self.sock.write('{"enableRawOutput": true, "format": "Json"}'.encode('utf-8'))
+        self.sock.write('{"enableRawOutput": false, "format": "Json"}'.encode('utf-8'))
         logging.info("Recording brain data...")
         f = open(EEG_FILE,"a")
         f2 = open(BLINK_FILE,'a')
-        f.write(','.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
-        f2.write(','.join(BLINK_STRENGTH))
+        f.write(''.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
+        f2.write(','.join(BLINK_STRENGTH) + '\n')
         while (1):
             try:
                 self.data = self.sock.read_until(b'\r')
