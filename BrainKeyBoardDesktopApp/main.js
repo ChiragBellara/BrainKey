@@ -6,6 +6,7 @@ const {app, BrowserWindow, Menu} = electron;
 
 
 let mainWindow;
+
 // listen for app to be ready
 
 app.on('ready', function(){
@@ -14,6 +15,22 @@ app.on('ready', function(){
     mainWindow = new BrowserWindow({width,height,webPreferences: {
         nodeIntegration: true
     }});
+
+    // var {PythonShell} = require('python-shell')
+    // var pathfile = url.format({
+    //     pathname: path.join(__dirname, 'testpython.py'),
+    // });
+    // var hell = String(pathfile);
+    // console.log(pathfile)
+    // PythonShell.runString(pathfile,null,function(err){
+    //     if(err){
+    //         console.log(err)
+    //         throw err
+    //     } ;
+    //     console.log('finished');
+    // });
+    // console.log(__dirname);
+    // console.log(__filename);
 
     // load html here
     mainWindow.loadURL(url.format({
@@ -26,7 +43,9 @@ app.on('ready', function(){
 
     Menu.setApplicationMenu(mainMenu);
 
+    
 });
+
 
 const mainMenuTemplate = [
     {
