@@ -1,0 +1,47 @@
+2019-10-07 14:00:48,504 INFO Connecting to TGC socket...
+2019-10-07 14:00:49,514 INFO Connected.
+2019-10-07 14:00:49,515 INFO Recording brain data...
+2019-10-07 14:02:38,774 INFO Connecting to TGC socket...
+2019-10-07 14:02:39,792 INFO Connected.
+2019-10-07 14:02:39,793 INFO Recording brain data...
+2019-10-07 14:02:39,794 ERROR Exception:
+Traceback (most recent call last):
+  File "recordEEGdata.py", line 115, in <module>
+    conn.record_data()
+  File "recordEEGdata.py", line 76, in record_data
+    f2.write(BLINK_STRENGTH)
+TypeError: write() argument must be str, not list
+2019-10-07 14:02:39,795 ERROR No connection with TGC socket
+2019-10-07 14:03:10,155 INFO Connecting to TGC socket...
+2019-10-07 14:03:11,165 INFO Connected.
+2019-10-07 14:03:11,165 INFO Recording brain data...
+2019-10-07 14:03:11,710 ERROR Exception:
+Traceback (most recent call last):
+  File "recordEEGdata.py", line 115, in <module>
+    conn.record_data()
+  File "recordEEGdata.py", line 80, in record_data
+    self.data = self.data.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xaa in position 0: invalid start byte
+2019-10-07 14:03:11,711 ERROR No connection with TGC socket
+2019-10-07 14:03:32,665 INFO Connecting to TGC socket...
+2019-10-07 14:03:33,686 INFO Connected.
+2019-10-07 14:03:33,687 INFO Recording brain data...
+2019-10-07 14:03:34,240 ERROR Exception:
+Traceback (most recent call last):
+  File "recordEEGdata.py", line 115, in <module>
+    conn.record_data()
+  File "recordEEGdata.py", line 80, in record_data
+    self.data = self.data.decode('ascii')
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xaa in position 0: ordinal not in range(128)
+2019-10-07 14:03:34,241 ERROR No connection with TGC socket
+2019-10-07 14:04:12,116 INFO Connecting to TGC socket...
+2019-10-07 14:04:13,129 INFO Connected.
+2019-10-07 14:04:13,129 INFO Recording brain data...
+2019-10-07 14:04:13,793 ERROR Exception:
+Traceback (most recent call last):
+  File "recordEEGdata.py", line 115, in <module>
+    conn.record_data()
+  File "recordEEGdata.py", line 80, in record_data
+    self.data = self.data.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xaa in position 0: invalid start byte
+2019-10-07 14:04:13,794 ERROR No connection with TGC socket

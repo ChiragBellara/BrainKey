@@ -2,14 +2,17 @@ import json
 import socket
 import hashlib
 import logging
+from telnetlib import Telnet
 
 LOGFILE = 'logfile.log'
 logging.basicConfig(filename=LOGFILE, format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG)
 
-STAT_FILE = 'stats.csv'
+EEG_FILE = 'eegData.csv'
+BLINK_FILE = 'blinkData.csv'
 TGHOST = "localhost"
 TGPORT = 13854
 CONFSTRING = '{"enableRawOutput": false, "format": "Json"}'
+
 EEG_POWER = [
     u'poorSignalLevel',
     u'delta',
@@ -39,8 +42,9 @@ class ThinkGearConnection():
 
     def connect(self, host, port):
         logging.info("Connecting to TGC socket...")
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.connect((host, int(port)))
+        #self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #self.sock.connect((host, int(port)))
+        self.sock = Telnet('localhost',13854)
         return self.sock
 
     def disconnect(self):
@@ -64,15 +68,19 @@ class ThinkGearConnection():
 
 
     def record_data(self):
+        self.sock.write('{"enableRawOutput": true, "format": "Json"}'.encode('utf-8'))
         logging.info("Recording brain data...")
-        f = open(STAT_FILE,"w")
-        f.write(','.join(EEG_POWER)+ ','.join(E_SENSE)+ ','.join(BLINK_STRENGTH) + '\n')
+        f = open(EEG_FILE,"a")
+        f2 = open(BLINK_FILE,'a')
+        f.write(','.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
+        f2.write(','.join(BLINK_STRENGTH))
         while (1):
             try:
-                self.data = self.sock.recv(1024).strip()
+                self.data = self.sock.read_until(b'\r')
+                self.data = self.data.decode('utf-8')
                 print(self.data)
                 self.json_data = json.loads(str(self.data))
-                print(self.json_data)
+                #print(self.json_data)
                 if 'eegPower' in self.json_data:
                     for i in EEG_POWER:
                         if i in self.json_data[u'eegPower']:
@@ -85,11 +93,11 @@ class ThinkGearConnection():
                     f.write(','.join(self.data_to_write)+'\n')
                     print(','.join(self.data_to_write))
                     self.data_to_write = []
-                if 'blinkStrength' in self.json_data:
-                    for i in E_SENSE:
-                        if i in self.json_data[u'blinkStrength']:
-                            self.data_to_write.append(str(self.json_data[u'blinkStrength'][i]))
-                    f.write(','.join(self.data_to_write)+'\n')
+                elif 'blinkStrength' in self.json_data:
+                    for i in BLINK_STRENGTH:
+                        print(type(self.json_data[u'blinkStrength']))
+                        self.data_to_write.append(str(self.json_data[u'blinkStrength']))
+                    f2.write(','.join(self.data_to_write)+'\n')
                     print(','.join(self.data_to_write))
                     self.data_to_write = []
 
@@ -104,6 +112,7 @@ if __name__ == "__main__":
     try:
         conn.connect(TGHOST, TGPORT)
         logging.info("Connected.")
+        conn.record_data()
     except Exception:
         logging.exception("Exception:")
         logging.error("No connection with TGC socket")
