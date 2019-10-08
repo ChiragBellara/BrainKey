@@ -3,12 +3,13 @@ import socket
 import hashlib
 import logging
 from telnetlib import Telnet
+import time
 
 LOGFILE = 'logfile.log'
 logging.basicConfig(filename=LOGFILE, format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG)
 
-EEG_FILE = 'eegDataRAJ.csv'
-BLINK_FILE = 'blinkDataRAJ.csv'
+EEG_FILE = 'eegDataCHIRAG.csv'
+BLINK_FILE = 'blinkDataCHIRAG.csv'
 TGHOST = "localhost"
 TGPORT = 13854
 CONFSTRING = '{"enableRawOutput": false, "format": "Json"}'
@@ -72,7 +73,7 @@ class ThinkGearConnection():
         logging.info("Recording brain data...")
         f = open(EEG_FILE,"a")
         f2 = open(BLINK_FILE,'a')
-        f.write(''.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
+        f.write(','.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
         f2.write(','.join(BLINK_STRENGTH) + '\n')
         while (1):
             try:
@@ -95,12 +96,12 @@ class ThinkGearConnection():
                     self.data_to_write = []
                 elif 'blinkStrength' in self.json_data:
                     for i in BLINK_STRENGTH:
-                        print(type(self.json_data[u'blinkStrength']))
+                        #print(type(self.json_data[u'blinkStrength']))
                         self.data_to_write.append(str(self.json_data[u'blinkStrength']))
                     f2.write(','.join(self.data_to_write)+'\n')
                     print(','.join(self.data_to_write))
                     self.data_to_write = []
-
+                time.sleep(1)
             except KeyboardInterrupt:
                 print("Quitting..")
                 #f.close()
