@@ -76,6 +76,8 @@ class ThinkGearConnection():
         f2 = open(BLINK_FILE,'a')
         f.write(','.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
         f2.write(','.join(BLINK_STRENGTH) + '\n')
+
+        ones=1
         while (1):
             try:
                 self.data = self.sock.read_until(b'\r')
@@ -83,8 +85,10 @@ class ThinkGearConnection():
                 self.json_data = json.loads(str(self.data))
                 #print(self.json_data)
                 if 'eegPower' in self.json_data:
-                    print("Connected")
-                    sys.stdout.flush()
+                    if ones==1:
+                        print("Connected")
+                        sys.stdout.flush()
+                        ones=0
                     for i in EEG_POWER:
                         if i in self.json_data[u'eegPower']:
                             self.data_to_write.append(str(self.json_data[u'eegPower'][i]))

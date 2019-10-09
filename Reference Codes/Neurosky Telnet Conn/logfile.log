@@ -65,3 +65,40 @@ UnicodeDecodeError: 'utf-8' codec can't decode byte 0xaa in position 0: invalid 
 2019-10-09 16:57:25,799 INFO Connecting to TGC socket...
 2019-10-09 16:57:26,806 INFO Connected.
 2019-10-09 16:57:26,806 INFO Recording brain data...
+2019-10-09 21:11:32,814 INFO Connecting to TGC socket...
+2019-10-09 21:11:34,972 ERROR Exception:
+Traceback (most recent call last):
+  File "recordEEGdata.py", line 121, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 21:11:34,975 ERROR No connection with TGC socket
+2019-10-09 21:12:08,855 INFO Connecting to TGC socket...
+2019-10-09 21:12:10,865 ERROR Exception:
+Traceback (most recent call last):
+  File "recordEEGdata.py", line 121, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\Users\Raj Madheshia\AppData\Local\Programs\Python\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 21:12:10,867 ERROR No connection with TGC socket
+2019-10-09 21:16:01,462 INFO Connecting to TGC socket...
+2019-10-09 21:16:02,470 INFO Connected.
+2019-10-09 21:16:02,571 INFO Recording brain data...

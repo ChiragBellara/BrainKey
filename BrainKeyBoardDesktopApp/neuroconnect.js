@@ -10,10 +10,13 @@ var options = {
 var runpython = new PythonShell("recordEEGdata.py", options);
 
 var i =0
+var t =0
 runpython.on('message', function(message){
-    if(message=="Connected"){
+    if(message=="Connected" && t===0){
         document.getElementById("isconnected").innerHTML = "Connected";
+        document.getElementById("isconnected").style.color = "lightgreen";
         console.log("Its working")
+        t=1;
     }
     else if(i===0){
         callFromPython();
