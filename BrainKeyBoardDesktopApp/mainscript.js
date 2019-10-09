@@ -103,6 +103,10 @@ var eachButton = []
     
 // }
 
+function alarm(){
+    var audio = new Audio('alarm.mp3');
+    audio.play()
+}
 
 function callFromPython(){
     clearInterval(internal)
@@ -165,7 +169,15 @@ function callFromPython3(){
     clearInterval(thirdInternal);
     document.getElementById(data).style.backgroundColor=null;
     document.getElementById(data).style.boxShadow=null;
-    document.getElementById("textscreen").value+=data
+    if(data=="space"){
+        document.getElementById("textscreen").value+=" "
+    }
+    else if(data=="help"){
+        alarm();
+    }
+    else{
+        document.getElementById("textscreen").value+=data
+    }
     internal = null;
     secInternal = null;
     thirdInternal = null;
@@ -175,6 +187,7 @@ function callFromPython3(){
     eachButton = []
     data= null
     first_opt();
+    
 }
 
 
