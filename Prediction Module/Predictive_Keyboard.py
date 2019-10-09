@@ -27,7 +27,10 @@ print(results)
 currentString = firstChar
 while True:
     inp = str(input())
-    currentString = currentString+inp
-    results = autocomplete.search(word=currentString)
-    print(results)
+    if inp == " ":
+        print()
+    else:
+        currentString = currentString+inp
+        results = autocomplete.search(word=currentString)
+        print(results)
     
