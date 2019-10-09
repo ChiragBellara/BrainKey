@@ -30,8 +30,25 @@ var options = {
 
 var runpython = new PythonShell("testpython.py", options);
 
+var i =0
 runpython.on('message', function(message){
-    console.log("Python script")
+    if(message=="Connected"){
+        
+    }
+    if(i===0){
+        callFromPython();
+        console.log("Working Python1")
+        i=1;
+    }
+    else if(i===1){
+        callFromPython2();
+        console.log("Working Python2");
+        i=2;
+    }
+    else if(i===2){
+        callFromPython3();
+        console.log("Working Python3")
+        i=0;
+    }
     
 });
-

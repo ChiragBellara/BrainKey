@@ -1,8 +1,7 @@
 import sys
 import time 
-a =  sys.argv[0]
-print(a)
+import random
 while(1):
     print("hello from python")
-    time.sleep(2)
+    time.sleep(random.choice([5,6,7, 8,9,10]))
     sys.stdout.flush()

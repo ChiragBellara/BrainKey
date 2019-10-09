@@ -16,23 +16,7 @@ app.on('ready', function(){
         nodeIntegration: true
     }});
 
-    // var {PythonShell} = require('python-shell')
-    // var pathfile = url.format({
-    //     pathname: path.join(__dirname, 'testpython.py'),
-    // });
-    // var hell = String(pathfile);
-    // console.log(pathfile)
-    // PythonShell.runString(pathfile,null,function(err){
-    //     if(err){
-    //         console.log(err)
-    //         throw err
-    //     } ;
-    //     console.log('finished');
-    // });
-    // console.log(__dirname);
-    // console.log(__filename);
-
-    // load html here
+    
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
         protocol: 'file',

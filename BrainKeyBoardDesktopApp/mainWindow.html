@@ -4,7 +4,8 @@
     
     <title>Brain Keyboard</title>
     <script type="text/javascript" src="mainscript.js"></script>
-    <script type="text/javascript" src="pythonconnection.js"></script>
+    <!-- <script type="text/javascript" src="pythonconnection.js"></script> -->
+    <script type="text/javascript" src="neuroconnect.js"></script>
 </head>
 <style>
 body{
@@ -82,11 +83,14 @@ h1{
 }
 </style>
 
-<body onload="first_opt()">
-    <h1>Brain Interface Keyboard</h1>  
+<body>
+    <h1>Brain Interface Keyboard</h1>
+    <button type="button" id="connect" onclick="Conn()">Connect</button>
+    <p id="isconnected">Disconnected</p>
     <div class="mainwin">
         <textarea name="screen" id="textscreen" cols="100" rows="10" >
         </textarea>
+        
     </div>
     <div class="block_container">
         <form class="formarea">
