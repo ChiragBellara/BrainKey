@@ -23,8 +23,8 @@ function reset(){
     accept = 0;
     data= null
 }
-function myFunction(event){
-    if(event.keyCode === 13 && accept===1){
+function myFunction(){
+    if(accept===1){
         clearInterval( internal );
         document.getElementById(old).style.backgroundColor=null;
         document.getElementById(old).style.boxShadow=null;
@@ -34,7 +34,7 @@ function myFunction(event){
         }
         firstChild();
     }
-    else if(event.keyCode === 13 && accept===2){
+    else if(accept===2){
         clearInterval( secInternal );
         document.getElementById(second).style.backgroundColor=null;
         document.getElementById(second).style.boxShadow=null;
@@ -46,7 +46,7 @@ function myFunction(event){
         eachBtn();
 
     }
-    else if(event.keyCode === 13 && accept===3){
+    else if(accept===3){
         clearInterval(thirdInternal);
         document.getElementById(data).style.backgroundColor=null;
         document.getElementById(data).style.boxShadow=null;
@@ -88,7 +88,7 @@ function firstChild(){
             document.getElementById(current).style.backgroundColor="blue";
             document.getElementById(second).style.boxShadow=null
             document.getElementById(current).style.boxShadow="0 15px 8px -6px #666";
-
+            console.log(document.getElementById(second).value)
             if(true){
                 var n = current
                 current = second
@@ -132,6 +132,7 @@ function first_opt(){
                 old =  "fifthrow"
                 divrow = "firstrow"
             }
+            console.log("mainscript")
         }, 3000);
     }
 }

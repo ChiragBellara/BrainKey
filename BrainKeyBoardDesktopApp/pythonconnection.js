@@ -31,5 +31,7 @@ var options = {
 var runpython = new PythonShell("testpython.py", options);
 
 runpython.on('message', function(message){
-    console.log(message)
+    console.log("Python script")
+    
 });
+
