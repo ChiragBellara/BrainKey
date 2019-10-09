@@ -81,12 +81,19 @@ h1{
     width: 250px;
     min-width: 250px;
 }
+#isconnected{
+    float: right;
+    font-size: 40px;
+    color: Red;
+}
 </style>
 
 <body>
-    <h1>Brain Interface Keyboard</h1>
-    <button type="button" id="connect" onclick="Conn()">Connect</button>
-    <p id="isconnected">Disconnected</p>
+    <div>
+        <h1>Brain Interface Keyboard</h1>
+        <p id="isconnected">Disconnected</p>
+    </div>
+    
     <div class="mainwin">
         <textarea name="screen" id="textscreen" cols="100" rows="10" >
         </textarea>

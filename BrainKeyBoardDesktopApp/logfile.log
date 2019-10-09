@@ -71,3 +71,162 @@ UnicodeDecodeError: 'ascii' codec can't decode byte 0xaa in position 0: ordinal 
 2019-10-09 17:00:12,095 INFO Connecting to TGC socket...
 2019-10-09 17:00:13,106 INFO Connected.
 2019-10-09 17:00:13,107 INFO Recording brain data...
+2019-10-09 20:56:26,989 INFO Connecting to TGC socket...
+2019-10-09 20:56:29,292 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 20:56:29,375 ERROR No connection with TGC socket
+2019-10-09 20:58:28,082 INFO Connecting to TGC socket...
+2019-10-09 20:58:30,092 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 20:58:30,096 ERROR No connection with TGC socket
+2019-10-09 20:58:59,909 INFO Connecting to TGC socket...
+2019-10-09 20:59:01,917 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 20:59:01,921 ERROR No connection with TGC socket
+2019-10-09 20:59:08,244 INFO Connecting to TGC socket...
+2019-10-09 20:59:10,255 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 20:59:10,259 ERROR No connection with TGC socket
+2019-10-09 20:59:50,492 INFO Connecting to TGC socket...
+2019-10-09 20:59:52,507 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 20:59:52,509 ERROR No connection with TGC socket
+2019-10-09 20:59:52,924 INFO Connecting to TGC socket...
+2019-10-09 20:59:54,932 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 20:59:54,934 ERROR No connection with TGC socket
+2019-10-09 21:00:18,824 INFO Connecting to TGC socket...
+2019-10-09 21:00:20,833 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 21:00:20,834 ERROR No connection with TGC socket
+2019-10-09 21:00:40,501 INFO Connecting to TGC socket...
+2019-10-09 21:00:42,510 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 21:00:42,514 ERROR No connection with TGC socket
+2019-10-09 21:00:50,200 INFO Connecting to TGC socket...
+2019-10-09 21:00:52,211 ERROR Exception:
+Traceback (most recent call last):
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 118, in <module>
+    conn.connect(TGHOST, TGPORT)
+  File "E:\Brain-Keyboard\Reference Codes\Neurosky Telnet Conn\recordEEGdata.py", line 49, in connect
+    self.sock = Telnet('localhost',13854)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "C:\ProgramData\Anaconda3\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 727, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2019-10-09 21:00:52,215 ERROR No connection with TGC socket
+2019-10-09 21:17:21,107 INFO Connecting to TGC socket...
+2019-10-09 21:17:22,115 INFO Connected.
+2019-10-09 21:17:22,148 INFO Recording brain data...
+2019-10-09 21:30:05,139 INFO Connecting to TGC socket...
+2019-10-09 21:30:06,148 INFO Connected.
+2019-10-09 21:30:06,148 INFO Recording brain data...
