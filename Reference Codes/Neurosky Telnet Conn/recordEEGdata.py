@@ -4,12 +4,13 @@ import hashlib
 import logging
 from telnetlib import Telnet
 import time
+import sys
 
 LOGFILE = 'logfile.log'
 logging.basicConfig(filename=LOGFILE, format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG)
 
-EEG_FILE = 'eegDataCHIRAG.csv'
-BLINK_FILE = 'blinkDataCHIRAG.csv'
+EEG_FILE = 'eegDataDIYA.csv'
+BLINK_FILE = 'blinkDataDIYA.csv'
 TGHOST = "localhost"
 TGPORT = 13854
 CONFSTRING = '{"enableRawOutput": false, "format": "Json"}'
@@ -69,7 +70,7 @@ class ThinkGearConnection():
 
 
     def record_data(self):
-        self.sock.write('{"enableRawOutput": false, "format": "Json"}'.encode('utf-8'))
+        self.sock.write('{"enableRawOutput": false, "format": "Json"}'.encode('ascii'))
         logging.info("Recording brain data...")
         f = open(EEG_FILE,"a")
         f2 = open(BLINK_FILE,'a')
@@ -78,11 +79,12 @@ class ThinkGearConnection():
         while (1):
             try:
                 self.data = self.sock.read_until(b'\r')
-                self.data = self.data.decode('utf-8')
-                print(self.data)
+                self.data = self.data.decode('ascii')
                 self.json_data = json.loads(str(self.data))
                 #print(self.json_data)
                 if 'eegPower' in self.json_data:
+                    print("Connected")
+                    sys.stdout.flush()
                     for i in EEG_POWER:
                         if i in self.json_data[u'eegPower']:
                             self.data_to_write.append(str(self.json_data[u'eegPower'][i]))
@@ -92,16 +94,18 @@ class ThinkGearConnection():
                         if i in self.json_data[u'eSense']:
                             self.data_to_write.append(str(self.json_data[u'eSense'][i]))
                     f.write(','.join(self.data_to_write)+'\n')
-                    print(','.join(self.data_to_write))
+                    #print(','.join(self.data_to_write))
                     self.data_to_write = []
                 elif 'blinkStrength' in self.json_data:
                     for i in BLINK_STRENGTH:
                         #print(type(self.json_data[u'blinkStrength']))
                         self.data_to_write.append(str(self.json_data[u'blinkStrength']))
+                        
                     f2.write(','.join(self.data_to_write)+'\n')
-                    print(','.join(self.data_to_write))
+                    print(self.data_to_write)
+                    sys.stdout.flush()
+                    #print(','.join(self.data_to_write))
                     self.data_to_write = []
-                time.sleep(1)
             except KeyboardInterrupt:
                 print("Quitting..")
                 #f.close()
@@ -113,6 +117,7 @@ if __name__ == "__main__":
     try:
         conn.connect(TGHOST, TGPORT)
         logging.info("Connected.")
+        
         conn.record_data()
     except Exception:
         logging.exception("Exception:")

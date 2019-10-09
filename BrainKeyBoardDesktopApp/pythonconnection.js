@@ -32,6 +32,9 @@ var runpython = new PythonShell("testpython.py", options);
 
 var i =0
 runpython.on('message', function(message){
+    if(message=="Connected"){
+        
+    }
     if(i===0){
         callFromPython();
         console.log("Working Python1")

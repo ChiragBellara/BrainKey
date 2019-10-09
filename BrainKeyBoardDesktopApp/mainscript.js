@@ -106,7 +106,6 @@ var eachButton = []
 
 function callFromPython(){
     clearInterval(internal)
-    console.log("testing"+old)
     document.getElementById(old).style.backgroundColor=null;
     document.getElementById(old).style.boxShadow=null;
     var children =document.getElementById(old).children;
@@ -143,7 +142,6 @@ function callFromPython2(){
     for(i=0; i<children.length;i++ ){
         eachButton.push(children[i].id);
     }
-    console.log("Second Call"+eachButton);
     if (! thirdInternal){
         accept =3
         var count =0
@@ -155,7 +153,7 @@ function callFromPython2(){
             btn= count%3
             count= count+1;
             data = eachButton[btn]
-            console.log(data)
+           
             document.getElementById(data).style.backgroundColor="green";
             document.getElementById(data).style.boxShadow="0 15px 8px -6px #666";
         },2000);
@@ -212,6 +210,6 @@ function first_opt(){
                 old =  "fifthrow"
                 divrow = "firstrow"
             }
-        }, 3000);
+        }, 2000);
     }
 }
