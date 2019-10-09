@@ -181,7 +181,6 @@ function callFromPython3(){
 
 function first_opt(){
     if (! internal){
-        accept =1
         internal = setInterval(function(){ 
             document.getElementById(old).style.backgroundColor=null;
             document.getElementById(divrow).style.backgroundColor="blue";

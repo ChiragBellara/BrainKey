@@ -106,7 +106,7 @@ class ThinkGearConnection():
                         self.data_to_write.append(str(self.json_data[u'blinkStrength']))
                         
                     f2.write(','.join(self.data_to_write)+'\n')
-                    print(self.data_to_write)
+                    print(int(self.data_to_write[0]))
                     sys.stdout.flush()
                     #print(','.join(self.data_to_write))
                     self.data_to_write = []

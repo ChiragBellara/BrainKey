@@ -6,6 +6,7 @@
     <script type="text/javascript" src="mainscript.js"></script>
     <!-- <script type="text/javascript" src="pythonconnection.js"></script> -->
     <script type="text/javascript" src="neuroconnect.js"></script>
+    <!-- <script type="text/javascript" src="plotly-latest.min.js"></script> -->
 </head>
 <style>
 body{
@@ -86,18 +87,22 @@ h1{
     font-size: 40px;
     color: Red;
 }
+/* #chart{
+    min-width: 200px;
+    min-height: 200px;
+    border: 2px solid rebeccapurple;
+    float:right;
+} */
 </style>
 
 <body>
     <div>
-        <h1>Brain Interface Keyboard</h1>
-        <p id="isconnected">Disconnected</p>
-    </div>
-    
-    <div class="mainwin">
-        <textarea name="screen" id="textscreen" cols="100" rows="10" >
-        </textarea>
+        <h1>Brain Interface Keyboard <p id="isconnected">Disconnected</p></h1>
         
+    </div>
+    <div class="mainwin">
+        <textarea name="screen" id="textscreen" cols="80" rows="10" >
+        </textarea>
     </div>
     <div class="block_container">
         <form class="formarea">

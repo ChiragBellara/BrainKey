@@ -1,5 +1,4 @@
 
-
 var {PythonShell} = require('python-shell')
 var path = require("path")
 
@@ -11,12 +10,18 @@ var runpython = new PythonShell("recordEEGdata.py", options);
 
 var i =0
 var t =0
+var data=0
 runpython.on('message', function(message){
     if(message=="Connected" && t===0){
         document.getElementById("isconnected").innerHTML = "Connected";
         document.getElementById("isconnected").style.color = "lightgreen";
-        console.log("Its working")
+        console.log("Its working");
+        first_opt()
         t=1;
+    }
+    else if(message<=50){
+        console.log("DO NOTHING")
+        console.log(message)
     }
     else if(i===0){
         callFromPython();
@@ -33,5 +38,17 @@ runpython.on('message', function(message){
         console.log("Working Python3")
         i=0;
     }
+
+    // if(message!="Connected"){   
+    //     data = message
+    //     Plotly.plot('chart',[{
+    //         y:data,
+    //         type:'line'
+    //     }]);
+
+        
+
+    //}
 });
+
 
