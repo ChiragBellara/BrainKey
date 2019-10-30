@@ -178,9 +178,29 @@ function callFromPython3(){
         var msg = new SpeechSynthesisUtterance("Space");
         document.getElementById("textscreen").value+=" "
         window.speechSynthesis.speak(msg);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "fifthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        console.log("This second")
+        first_opt();
     }
     else if(data=="help"){
         alarm();
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "fifthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        console.log("This second")
+        first_opt();
     }
     else{
         var msg = new SpeechSynthesisUtterance(data);
@@ -193,35 +213,42 @@ function callFromPython3(){
             scriptPath : path.join(__dirname,'../Prediction Module'),
         }
         var runpython = new PythonShell("Predictive_Keyboard.py", options);
-        runpython.on('message', function(data){
-            console.log(data);
+        runpython.on('message',function(message){
+            // console.log(typeof(message))
+            makeUL(message);
+            internal = null;
+            secInternal = null;
+            thirdInternal = null;
+            divrow = "firstrow";
+            old = "fifthrow";
+            firstRowChild = []
+            eachButton = []
+            first_opt();
         })
+        
     }
-    internal = null;
-    secInternal = null;
-    thirdInternal = null;
-    divrow = "firstrow";
-    old = "fifthrow";
-    firstRowChild = []
-    eachButton = []
-    data= null
-    first_opt();
+    
     
 }
 
-function deleteState(){
-    internal = null;
-    secInternal = null;
-    thirdInternal = null;
-    divrow = "firstrow";
-    old = "fifthrow";
-    firstRowChild = []
-    eachButton = []
-    data= null
-    document.getElementById(old).style.backgroundColor=null;
+function makeUL(data){
+    console.log(data)
+    data = data.replace(/[^a-zA-Z0-9,]/g, '');
+    console.log(data)
+    var a = '<ul>'
+        b = '</ul>'
+        m = [];
+    //'d','do','da','de','di'
+    var array = data.split(",")
+    console.log(typeof(array))
+    console.log(array)
+    
+    for (n = 0; n < array.length; n += 1){
+        m[n] = '<li>' + array[n] + '</li>';
+    }
+    document.getElementById('prediction').innerHTML = a + m + b;
+    
 }
-
-
 
 function first_opt(){
     console.log("Inside first_opt")

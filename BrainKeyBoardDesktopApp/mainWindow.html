@@ -7,6 +7,7 @@
     <!-- <script type="text/javascript" src="pythonconnection.js"></script> -->
     <script type="text/javascript" src="neuroconnect.js"></script>
     <!-- <script type="text/javascript" src="plotly-latest.min.js"></script> -->
+    
 </head>
 <style>
 body{
@@ -69,18 +70,24 @@ h1{
     margin-bottom: 5px;
     margin-right: 10px;
 }
+.containers{
+    justify-items: end;
+}
 .block_container{
-    display: flex;
-    justify-content:left;
+    width: 30%;
+    height: 200px;
+    padding: 10px;
+    float: left;
 }
 .prediction_box{
-    
-    background: #4CAF50;
-    display: inline;
+    width: 50%;
+   float:right;
 }
-.prediction{
+#prediction{
     width: 250px;
     min-width: 250px;
+    min-height: 300px;
+    background: #AAA;
 }
 #isconnected{
     float: right;
@@ -93,6 +100,18 @@ h1{
     border: 2px solid rebeccapurple;
     float:right;
 } */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+}
 </style>
 
 <body>
@@ -104,6 +123,7 @@ h1{
         <textarea name="screen" id="textscreen" cols="80" rows="10" >
         </textarea>
     </div>
+    <div class="containers">
     <div class="block_container">
         <form class="formarea">
             <div id="firstrow" tabindex="1">
@@ -176,12 +196,12 @@ h1{
                 
             </div>  
         </form>
-        <div class="prediction_box">
-            <div class="prediction">
-                
-            </div>
+        
+    </div>
+    <div class="prediction_box">
+        <div id="prediction">     
         </div>
     </div>
-    
+</div>
 </body>
 </html>
