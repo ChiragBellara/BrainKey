@@ -2,10 +2,10 @@ import csv
 from fast_autocomplete.misc import read_csv_gen
 from fast_autocomplete import AutoComplete
 import os
+import sys
 
 
-def get_words(path):
-    filepath = os.path.join(path,"mostusedwords.csv")
+def get_words(filepath):
     csv_gen = read_csv_gen(filepath, csv_func=csv.DictReader)
     words = {}
     for line in csv_gen:
@@ -19,19 +19,13 @@ def get_words(path):
             words[make] = {}
     return words
 
-words = get_words("Wordlists/")
+words = get_words(sys.argv[1])
 autocomplete = AutoComplete(words=words)
-firstChar = str(input())
-results = autocomplete.search(word=firstChar)
-print(results)
-currentString = firstChar
-while True:
-    inp = str(input())
-    if inp == " ":
-        currentString = ""
-        print("End of Word")
-    else:
-        currentString = currentString+inp
-        results = autocomplete.search(word=currentString)
-        print(results)
+currentString=""
+currentString = sys.argv[2]
+if " " in currentString:
+    print("End of Word")
+else:
+    results = autocomplete.search(word=currentString)
+    print(results)
     
