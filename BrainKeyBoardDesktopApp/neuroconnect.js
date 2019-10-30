@@ -18,9 +18,6 @@ runpython.on('message', function(message){
         first_opt()
         t=1;
     }
-    else if(message=="switch"){
-        console.log("Switching working")
-    }
     else if(message<=50){
         console.log("DO NOTHING")
         console.log(message)

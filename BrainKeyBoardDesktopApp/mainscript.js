@@ -194,8 +194,12 @@ function callFromPython3(){
         }
         var runpython = new PythonShell("Predictive_Keyboard.py", options);
         runpython.on('message', function(data){
-            console.log(data);
+            console.log(data)
+            ans = data;
         })
+        makeUL(data);
+        
+        
     }
     internal = null;
     secInternal = null;
@@ -209,7 +213,18 @@ function callFromPython3(){
     
 }
 
-
+function makeUL(data){
+    console.log(data)
+    var a = '<ul>',
+        b = '</ul>',
+        m = [];
+    
+    for (i = 0; i < data[0].length; i += 1){
+        console.log(data[0][i])
+        m[i] = '<li>' + data[0][i] + '</li>';
+    }
+    document.getElementById('prediction').innerHTML = a + m + b;
+}
 
 function first_opt(){
     if (! internal){

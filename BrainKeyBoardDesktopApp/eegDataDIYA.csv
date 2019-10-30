@@ -922,3 +922,6 @@ poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGam
 ,160259,498964,157514,52092,240091,87747,282183,166914,0,0
 ,1529361,1186651,533981,157959,300228,465685,170976,212646,0,0
 ,391146,147353,61817,103101,91622,255375,126625,67204,0,0
+poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
+poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
+poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
