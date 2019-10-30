@@ -185,21 +185,8 @@ function callFromPython3(){
     else{
         var msg = new SpeechSynthesisUtterance(data);
         document.getElementById("textscreen").value+=data  
-        var ans = document.getElementById("textscreen").value
-
         window.speechSynthesis.speak(msg);
-        var options = {
-            args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
-            scriptPath : path.join(__dirname,'../Prediction Module'),
-        }
-        var runpython = new PythonShell("Predictive_Keyboard.py", options);
-        runpython.on('message', function(data){
-            console.log(data)
-            ans = data;
-        })
-        makeUL(data);
-        
-        
+        //always();
     }
     internal = null;
     secInternal = null;
@@ -213,18 +200,6 @@ function callFromPython3(){
     
 }
 
-function makeUL(data){
-    console.log(data)
-    var a = '<ul>',
-        b = '</ul>',
-        m = [];
-    
-    for (i = 0; i < data[0].length; i += 1){
-        console.log(data[0][i])
-        m[i] = '<li>' + data[0][i] + '</li>';
-    }
-    document.getElementById('prediction').innerHTML = a + m + b;
-}
 
 function first_opt(){
     if (! internal){
@@ -259,3 +234,31 @@ function first_opt(){
         }, 2000);
     }
 }
+
+
+// function always(){
+//     var {PythonShell} = require('python-shell')
+//     var path = require("path")
+//     setInterval(function(){
+//     document.getElementById("textscreen").value+=data  
+//     var ans = document.getElementById("textscreen").value
+//     var options = {
+//         args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
+//         scriptPath : path.join(__dirname,'../Prediction Module'),
+//     }
+//     var runpython = new PythonShell("Predictive_Keyboard.py", options);
+//     runpython.on('message', function(message){
+//         console.log(message)
+//         var a = '<ul>',
+//         b = '</ul>',
+//         m = [];
+
+//         for (i = 0; i < message[0].length; i += 1){
+//             console.log(message[0][i])
+//             m[i] = '<li>' + message[0][i] + '</li>';
+//         }
+//             document.getElementById('prediction').innerHTML = a + m + b;
+//         })
+//     }, 2000)
+    
+// }
