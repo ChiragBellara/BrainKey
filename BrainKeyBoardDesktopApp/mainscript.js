@@ -1,3 +1,8 @@
+var {PythonShell} = require('python-shell')
+var path = require("path")
+
+
+
 var internal = null;
 var secInternal = null;
 var thirdInternal = null;
@@ -180,8 +185,17 @@ function callFromPython3(){
     else{
         var msg = new SpeechSynthesisUtterance(data);
         document.getElementById("textscreen").value+=data  
+        var ans = document.getElementById("textscreen").value
+
         window.speechSynthesis.speak(msg);
-        
+        var options = {
+            args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
+            scriptPath : path.join(__dirname,'../Prediction Module'),
+        }
+        var runpython = new PythonShell("Predictive_Keyboard.py", options);
+        runpython.on('message', function(data){
+            console.log(data);
+        })
     }
     internal = null;
     secInternal = null;

@@ -4,6 +4,7 @@ import time
 from telnetlib import Telnet
 import numpy as np
 
+
 tn=Telnet('localhost',13854);
 
 start=time.clock();
@@ -11,7 +12,7 @@ start=time.clock();
 i=0;
 # app registration step (in this instance unnecessary) 
 #tn.write('{"appName": "Example", "appKey": "9f54141b4b4c567c558d3a76cb8d715cbde03096"}');
-tn.write('{"enableRawOutput": true, "format": "Json"}'.encode('utf-8'));
+tn.write('{"enableRawOutput": true, "format": "Json"}'.encode('ascii'));
 
 #blink_or_not = raw_input('Non-zero blink(1) or zero blink(0): ')
 
@@ -30,13 +31,31 @@ iterations = 0
 all_values = 0
 right_values = 0
 
+# Declarations
+time_array = []
+blinkStrength_values = []
+lowGamma_values = []
+highGamma_values = []
+highAlpha_values = []
+delta_values = []
+lowBeta_values = []
+highBeta_values = []
+theta_values = []
+lowAlpha_values = []
+attention_values = []
+meditation_values = []
+
+
+
 while time.clock() - start < 100:
 	blinkStrength=0;
 
 	line=tn.read_until(b'\r');
 	if len(line) > 20:	
 		timediff=time.clock()-start;
-		dict=json.loads(str(line));
+		data=line.decode('ascii');
+		dict = json.loads(data)
+		print(dict)
 		if "poorSignalLevel" in dict:
 			signalLevel=dict['poorSignalLevel'];
 		if "blinkStrength" in dict:
@@ -59,7 +78,7 @@ while time.clock() - start < 100:
 		lowAlpha_values = np.append(lowAlpha_values, [waveDict['lowAlpha']]);
 		attention_values = np.append(attention_values, [eSenseDict['attention']]);
 		meditation_values = np.append(meditation_values, [eSenseDict['meditation']]);
-		print(outputstr)
+		#print(outputstr)
 		values_list.append(np.array([blinkStrength, delta_values[-1], highAlpha_values[-1], highBeta_values[-1], highGamma_values[-1], lowAlpha_values[-1], lowBeta_values[-1], lowGamma_values[-1], theta_values[-1]]))
 		iterations += 1
 		if iterations == 1 or iterations == 2:
