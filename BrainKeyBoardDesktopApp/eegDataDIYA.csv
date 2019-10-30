@@ -927,6 +927,7 @@ poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGam
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
+<<<<<<< HEAD
 ,387067,163654,16213,11112,7611,9844,4197,1688,0,0
 ,1079074,97152,38760,28336,4382,7003,1985,822,0,0
 ,310697,16334,2954,7266,6349,4974,844,618,0,0
@@ -1235,4 +1236,6 @@ poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGam
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation
+=======
+>>>>>>> 1a4610595142919b22f584ac9ee4dd73fe78e341
 poorSignalLevel,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma,attention,meditation

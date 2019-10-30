@@ -10,7 +10,7 @@ def get_words(filepath):
     words = {}
     for line in csv_gen:
         make = line['wordList']
-        local_words = ['{}'.format(make)]
+        local_words = ["{}".format(make)]
         while local_words:
             word = local_words.pop()
             if word not in words:
