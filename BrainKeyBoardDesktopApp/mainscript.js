@@ -170,13 +170,17 @@ function callFromPython3(){
     document.getElementById(data).style.backgroundColor=null;
     document.getElementById(data).style.boxShadow=null;
     if(data=="space"){
+        var msg = new SpeechSynthesisUtterance("Space");
         document.getElementById("textscreen").value+=" "
+        window.speechSynthesis.speak(msg);
     }
     else if(data=="help"){
         alarm();
     }
     else{
-        document.getElementById("textscreen").value+=data
+        var msg = new SpeechSynthesisUtterance(data);
+        document.getElementById("textscreen").value+=data  
+        window.speechSynthesis.speak(msg);
     }
     internal = null;
     secInternal = null;
