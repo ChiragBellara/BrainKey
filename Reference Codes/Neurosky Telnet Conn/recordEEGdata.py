@@ -78,6 +78,7 @@ class ThinkGearConnection():
         f2.write(','.join(BLINK_STRENGTH) + '\n')
 
         ones=1
+        starttime = time.time()
         while (1):
             try:
                 self.data = self.sock.read_until(b'\r')
@@ -106,7 +107,13 @@ class ThinkGearConnection():
                         self.data_to_write.append(str(self.json_data[u'blinkStrength']))
                         
                     f2.write(','.join(self.data_to_write)+'\n')
-                    print(int(self.data_to_write[0]))
+                    timediff =  time.time() - starttime
+                    if timediff < 1.5:
+                        print("switch")
+                        starttime = time.time()
+                    else:
+                        print(int(self.data_to_write[0]))
+                        starttime = time.time()
                     sys.stdout.flush()
                     #print(','.join(self.data_to_write))
                     self.data_to_write = []
