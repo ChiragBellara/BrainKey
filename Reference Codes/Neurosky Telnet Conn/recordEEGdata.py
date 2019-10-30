@@ -14,7 +14,6 @@ BLINK_FILE = 'blinkDataDIYA.csv'
 TGHOST = "localhost"
 TGPORT = 13854
 CONFSTRING = '{"enableRawOutput": false, "format": "Json"}'
-
 EEG_POWER = [
     u'poorSignalLevel',
     u'delta',

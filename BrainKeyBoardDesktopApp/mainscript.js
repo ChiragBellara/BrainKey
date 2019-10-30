@@ -181,6 +181,7 @@ function callFromPython3(){
         var msg = new SpeechSynthesisUtterance(data);
         document.getElementById("textscreen").value+=data  
         window.speechSynthesis.speak(msg);
+        
     }
     internal = null;
     secInternal = null;
@@ -194,9 +195,22 @@ function callFromPython3(){
     
 }
 
+function deleteState(){
+    internal = null;
+    secInternal = null;
+    thirdInternal = null;
+    divrow = "firstrow";
+    old = "fifthrow";
+    firstRowChild = []
+    eachButton = []
+    data= null
+    document.getElementById(old).style.backgroundColor=null;
+}
+
 
 
 function first_opt(){
+    console.log("Inside first_opt")
     if (! internal){
         internal = setInterval(function(){ 
             document.getElementById(old).style.backgroundColor=null;
