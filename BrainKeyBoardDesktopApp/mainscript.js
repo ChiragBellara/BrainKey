@@ -218,7 +218,7 @@ function callFromPython3(){
     }
     else if(data=="deleteWord"){
         var ans = document.getElementById("textscreen").value
-        ans = ans.substring(0, ans.length - 2);
+        ans = ans.substring(0, ans.length - 1);
         document.getElementById("textscreen").value = ans
         var options = {
             args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
