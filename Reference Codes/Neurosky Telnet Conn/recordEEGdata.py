@@ -42,7 +42,7 @@ class ThinkGearConnection():
         self.data_to_write = []
 
     def connect(self, host, port):
-        logging.info("Connecting to TGC socket...")
+        #logging.info("Connecting to TGC socket...")
         #self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         #self.sock.connect((host, int(port)))
         self.sock = Telnet('localhost',13854)
@@ -70,7 +70,7 @@ class ThinkGearConnection():
 
     def record_data(self):
         self.sock.write('{"enableRawOutput": false, "format": "Json"}'.encode('ascii'))
-        logging.info("Recording brain data...")
+        #logging.info("Recording brain data...")
         f = open(EEG_FILE,"a")
         f2 = open(BLINK_FILE,'a')
         f.write(','.join(EEG_POWER)+ ',' + ','.join(E_SENSE) + '\n')
@@ -126,9 +126,10 @@ if __name__ == "__main__":
     conn = ThinkGearConnection()
     try:
         conn.connect(TGHOST, TGPORT)
-        logging.info("Connected.")
+        #logging.info("Connected.")
         
         conn.record_data()
     except Exception:
-        logging.exception("Exception:")
-        logging.error("No connection with TGC socket")
+        pass
+        #logging.exception("Exception:")
+        #logging.error("No connection with TGC socket")
