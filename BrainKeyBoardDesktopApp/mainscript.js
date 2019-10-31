@@ -202,6 +202,43 @@ function callFromPython3(){
         console.log("This second")
         first_opt();
     }
+    else if(data=="clear"){
+        var msg = new SpeechSynthesisUtterance("Clearing");
+        window.speechSynthesis.speak(msg);
+        document.getElementById("textscreen").value=""
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "fifthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        first_opt();
+    }
+    else if(data=="deleteWord"){
+        var ans = document.getElementById("textscreen").value
+        ans = ans.substring(0, ans.length - 2);
+        document.getElementById("textscreen").value = ans
+        var options = {
+            args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
+            scriptPath : path.join(__dirname,'../Prediction Module'),
+        }
+        var runpython = new PythonShell("Predictive_Keyboard.py", options);
+        runpython.on('message',function(message){
+            // console.log(typeof(message))
+            makeUL(message);
+            internal = null;
+            secInternal = null;
+            thirdInternal = null;
+            divrow = "firstrow";
+            old = "fifthrow";
+            firstRowChild = []
+            eachButton = []
+            first_opt();
+        })
+
+    }
     else{
         var msg = new SpeechSynthesisUtterance(data);
         document.getElementById("textscreen").value+=data  
