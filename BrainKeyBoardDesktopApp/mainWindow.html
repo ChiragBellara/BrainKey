@@ -3,6 +3,9 @@
 <head>
     
     <title>Brain Keyboard</title>
+    <script>
+    var isPredict=false
+    </script>
     <script type="text/javascript" src="mainscript.js"></script>
     <!-- <script type="text/javascript" src="pythonconnection.js"></script> -->
     <script type="text/javascript" src="neuroconnect.js"></script>
@@ -18,21 +21,30 @@ body{
     scroll-behavior: auto;
 }
 .buttonattr{
-    background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 16px 40px 16px 40px;
+  padding: 10px 40px 10px 40px;
   width: 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   align-items: center;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
   cursor: pointer;
   font-family: Georgia, 'Times New Roman', Times, serif
 }
+.buttonattr1{
+  background-color: #4CAF50; /* Green */
+  padding: 10px 0px 10px 0px;
+  margin: auto;
+  width: 83px;
+  text-align: center;
+  font-size: 16px;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
 .button1 {
   background-color: white; 
   color: black; 
@@ -56,13 +68,13 @@ body{
     align-items: center;
     display: inline
 }
-#firstrow,#secondrow, #thirdrow,#forthrow, #fifthrow{
+#firstrow,#secondrow, #thirdrow,#forthrow, #fifthrow, #sixthrow{
     padding: 5px;
     width:560px;
     display:flex;
     justify-content:space-between;
 }
-#firstrow_1,#secondrow_1, #thirdrow_1,#forthrow_1, #fifthrow_1, #firstrow_2,#secondrow_2, #thirdrow_2,#forthrow_2, #fifthrow_2{
+#firstrow_1,#secondrow_1, #thirdrow_1,#forthrow_1, #fifthrow_1, #firstrow_2,#secondrow_2, #thirdrow_2,#forthrow_2, #fifthrow_2,#sixthrow_1, #sixthrow_2{
     padding: 10px;
 }
 h1{
@@ -128,78 +140,84 @@ ul li {
         <form class="formarea">
             <div id="firstrow" tabindex="1">
                 <div id="firstrow_1">
+                    <button type="button" id="help" class="buttonattr1 button1">Help</button>
+                    <button type="button" id="clear" class="buttonattr1 button1">Clear</button>
+                    <button type="button" id="deleteWord" class="buttonattr1 button1">Delete</button>
+                </div>    
+                <div id="firstrow_2">
+                    <button type="button" id="space" class="buttonattr1 button1">Space</button>
+                    <button type="button" id="switch" class="buttonattr1 button1">Switch</button>
+                    <button type="button" id="speak" class="buttonattr1 button1">Speak</button>
+                </div>
+            </div>
+            <div id="secondrow">
+                <div id="secondrow_1">
                     <button type="button" id="a" class="buttonattr button1">A</button>
                     <button type="button" id="b" class="buttonattr button1">B</button>
                     <button type="button" id="c" class="buttonattr button1">C</button>
                 </div>
-                
-                <div id="firstrow_2">
+                <div id="secondrow_2">
                     <button type="button" id="d" class="buttonattr button1">D</button>
                     <button type="button" id="e" class="buttonattr button1">E</button>
-                    <button type="button" id="f" class="buttonattr button1">F</button>
-                </div>
-            </div>
-    
-            <div id="secondrow">
-                <div id="secondrow_1">
-                    <button type="button" id="g" class="buttonattr button1">G</button>
-                    <button type="button" id="h" class="buttonattr button1">H</button>
-                    <button type="button" id="i" class="buttonattr button1">I</button>
-                </div>
-                <div id="secondrow_2">
-                    <button type="button" id="j" class="buttonattr button1">J</button>
-                    <button type="button" id="k" class="buttonattr button1">K</button>
-                    <button type="button" id="l" class="buttonattr button1">L</button>
-                </div>
-              
+                    <button type="button" id="f" class="buttonattr button1">F</button>            
+                </div> 
             </div>
             <div id="thirdrow">
                 <div id="thirdrow_1">
+                    <button type="button" id="g" class="buttonattr button1">G</button>
+                    <button type="button" id="h" class="buttonattr button1">H</button>
+                    <button type="button" id="i" class="buttonattr button1">I</button> 
+                </div>
+                <div id="thirdrow_2">
+                    <button type="button" id="j" class="buttonattr button1">J</button>
+                    <button type="button" id="k" class="buttonattr button1">K</button>
+                    <button type="button" id="l" class="buttonattr button1">L</button>  
+                </div>
+            </div>
+            <div id="forthrow">
+                <div id="forthrow_1">
                     <button type="button" id="m" class="buttonattr button1">M</button>
                     <button type="button" id="n" class="buttonattr button1">N</button>
                     <button type="button" id="o" class="buttonattr button1">O</button>
+
+                    
                 </div>
-                <div id="thirdrow_2">
+                <div id="forthrow_2">
                     <button type="button" id="p" class="buttonattr button1">P</button>
                     <button type="button" id="q" class="buttonattr button1">Q</button>
                     <button type="button" id="r" class="buttonattr button1">R</button>
                 </div>
-                
-            
-                
             </div>
-            <div id="forthrow">
-                <div id="forthrow_1">
+            <div id="fifthrow">
+                <div id="fifthrow_1">
                     <button type="button" id="s" class="buttonattr button1">S</button>
                     <button type="button" id="t" class="buttonattr button1">T</button>
                     <button type="button" id="u" class="buttonattr button1">U</button>
                 </div>
-                <div id="forthrow_2">
-                    <button type="button" id="v" class="buttonattr button1">V</button>
+                <div id="fifthrow_2">
+                        <button type="button" id="v" class="buttonattr button1">V</button>
                     <button type="button" id="w" class="buttonattr button1">W</button>
                     <button type="button" id="x" class="buttonattr button1">X</button>
                 </div>
-                
-                
             </div>
-            <div id="fifthrow">
-                <div id="fifthrow_1">
+            <div id="sixthrow">
+                <div id="sixthrow_1">
                     <button type="button" id="y" class="buttonattr button1">Y</button>
                     <button type="button" id="z" class="buttonattr button1">Z</button>
-                    <button type="button" id="space" class="buttonattr button1">Space</button>
+                    <button type="button" id="na1" class="buttonattr button1">Na1</button>
                 </div>
-                <div id="fifthrow_2">
-                    <button type="button" id="help" class="buttonattr button1">Help</button>
-                    <button type="button" id="clear" class="buttonattr button1">Clear</button>
-                    <button type="button" id="deleteWord" class="buttonattr button1">Delete</button>
+                <div id="sixthrow_2">
+                    <button type="button" id="na2" class="buttonattr button1">Na2</button>
+                    <button type="button" id="na3" class="buttonattr button1">Na3</button>
+                    <button type="button" id="na4" class="buttonattr button1">Na4</button>
                 </div>
-                
             </div>  
         </form>
         
     </div>
     <div class="prediction_box">
-        <div id="prediction">     
+        <div id="prediction">
+                 
         </div>
     </div>
 </div>

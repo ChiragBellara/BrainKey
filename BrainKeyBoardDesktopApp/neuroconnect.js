@@ -23,6 +23,9 @@ runpython.on('message', function(message){
         console.log("DO NOTHING")
         console.log(message)
     }
+    else if(isPredict){
+        makePredict();
+    }
     else if(i===0){
         callFromPython();
         console.log("Working Python1")
@@ -41,18 +44,6 @@ runpython.on('message', function(message){
         console.log("WHy not"+message)
         console.log(i)
     }
-    
-
-    // if(message!="Connected"){   
-    //     data = message
-    //     Plotly.plot('chart',[{
-    //         y:data,
-    //         type:'line'
-    //     }]);
-
-        
-
-    //}
 });
 
 

@@ -1,112 +1,58 @@
 var {PythonShell} = require('python-shell')
 var path = require("path")
-
-
-
 var internal = null;
 var secInternal = null;
 var thirdInternal = null;
+var predictInterval = null;
 let divrow = "firstrow";
-let old = "fifthrow";
+let old = "sixthrow";
 var firstRowChild = [];
 var secRowChild = [];
-// var current = null;
-// var second = null;
 var eachButton = []
-// var accept = 0;
-// var data = null
+var predict=null
 
-// function reset(){
-//     clearInterval(thirdInternal);
-//     document.getElementById(data).style.backgroundColor=null;
-//     document.getElementById(data).style.boxShadow=null;
-//     accept = 1;
-//     document.getElementById("textscreen").value+=data
-//     reset();
-//     first_opt();
-//     internal = null;
-//     secInternal = null;
-//     thirdInternal = null;
-//     divrow = "firstrow";
-//     old = "fifthrow";
-//     firstRowChild = []
-//     current = null;
-//     second = null;
-//     eachButton = []
-//     accept = 0;
-//     data= null
-// }
-// // function myFunction(){
-// //     if(accept===1){
-        
-// //         firstChild();
-// //     }
-// //     else if(accept===2){
-        
-// //         eachBtn();
-
-// //     }
-// //     else if(accept===3){
-        
-// //     }
-// // }
-
-// //Button selection
-// function eachBtn(){
-//     clearInterval( secInternal );
-//     document.getElementById(second).style.backgroundColor=null;
-//     document.getElementById(second).style.boxShadow=null;
-//     var children =document.getElementById(second).children;
-//     for(i=0; i<children.length;i++ ){
-//         eachButton.push(children[i].id);
-//     }
-//     console.log(eachButton);
-//     if (! thirdInternal){
-//         accept =3
-//         var count =0
-//         var btn = null
-//         data = eachButton[0]
-//         thirdInternal = setInterval(function(){
-//             document.getElementById(data).style.backgroundColor=null;
-//             document.getElementById(data).style.boxShadow=null;
-//             btn= count%3
-//             count= count+1;
-//             data = eachButton[btn]
-//             console.log(data)
-//             document.getElementById(data).style.backgroundColor="green";
-//             document.getElementById(data).style.boxShadow="0 15px 8px -6px #666";
-//         },2000);
-//     }
-// }
-
-// // Two row selection
-// function firstChild(){
-//     clearInterval( internal );
-//     document.getElementById(old).style.backgroundColor=null;
-//     document.getElementById(old).style.boxShadow=null;
-//     var children =document.getElementById(old).children;
-//     for(i=0; i<children.length;i++ ){
-//         firstRowChild.push(children[i].id);
-//     }
-//     current = firstRowChild[0];
-//     second = firstRowChild[1];
-//     if(! secInternal){
-//         accept=2
-//         secInternal = setInterval(function(){
-//             document.getElementById(second).style.backgroundColor=null;
-//             document.getElementById(current).style.backgroundColor="blue";
-//             document.getElementById(second).style.boxShadow=null
-//             document.getElementById(current).style.boxShadow="0 15px 8px -6px #666";
-
-//             if(true){
-//                 var n = current
-//                 current = second
-//                 second = n
-//             }
-//         }, 3000);
-//     }
-    
-// }
+function prediction(){
+    inPredict = true;
+    var num =0
+    console.log(predict)
+    predictInterval=setInterval(function(){
+        if(num==0){
+            old = predict[0]
+            data = predict[0]
+            document.getElementById(predict[0]).style.backgroundColor = "blue";
+            document.getElementById(predict[0]).style.boxShadow="0 10px 6px -4px";
+        }
+        document.getElementById(old).style.backgroundColor = null;
+        document.getElementById(predict[num]).style.backgroundColor = "blue";
+        document.getElementById(old).style.boxShadow=null;
+        document.getElementById(predict[num]).style.boxShadow="0 10px 6px -4px";
+        old = predict[num];
+        data = old;
+        num = (num+1)%5;
+    },2000);
+}
+function makePredict(){
+    isPredict = false;
+    clearInterval(predictInterval);
+    document.getElementById("textscreen").value+=(data + " ") 
+    var options = {
+        args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
+        scriptPath : path.join(__dirname,'../Prediction Module'),
+    }
+    var runpython = new PythonShell("Predictive_Keyboard.py", options);
+    runpython.on('message',function(message){
+        // console.log(typeof(message))
+        makeUL(message);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        first_opt();
+    })
+}
 
 function alarm(){
     var audio = new Audio('alarm.mp3');
@@ -130,7 +76,7 @@ function callFromPython(){
             document.getElementById(old).style.backgroundColor=null;
             document.getElementById(divrow).style.backgroundColor="blue";
             document.getElementById(old).style.boxShadow=null
-            document.getElementById(divrow).style.boxShadow="0 15px 8px -6px #666";
+            document.getElementById(divrow).style.boxShadow="0 10px 6px -4px";
 
             if(true){
                 var n = divrow
@@ -164,7 +110,7 @@ function callFromPython2(){
             data = eachButton[btn]
            
             document.getElementById(data).style.backgroundColor="green";
-            document.getElementById(data).style.boxShadow="0 15px 8px -6px #666";
+            document.getElementById(data).style.boxShadow="0 10px 6px -4px";
         },2000);
     }
 
@@ -182,7 +128,7 @@ function callFromPython3(){
         secInternal = null;
         thirdInternal = null;
         divrow = "firstrow";
-        old = "fifthrow";
+        old = "sixthrow";
         firstRowChild = []
         eachButton = []
         data= null
@@ -195,7 +141,7 @@ function callFromPython3(){
         secInternal = null;
         thirdInternal = null;
         divrow = "firstrow";
-        old = "fifthrow";
+        old = "sixthrow";
         firstRowChild = []
         eachButton = []
         data= null
@@ -210,11 +156,24 @@ function callFromPython3(){
         secInternal = null;
         thirdInternal = null;
         divrow = "firstrow";
-        old = "fifthrow";
+        old = "sixthrow";
         firstRowChild = []
         eachButton = []
         data= null
         first_opt();
+    }
+    else if(data=="switch"){
+        var ans = document.getElementById("textscreen").value
+        var lastIndex = ans.lastIndexOf(" ");
+        document.getElementById("textscreen").value = ans.substring(0, lastIndex);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        prediction();
     }
     else if(data=="deleteWord"){
         var ans = document.getElementById("textscreen").value
@@ -232,7 +191,7 @@ function callFromPython3(){
             secInternal = null;
             thirdInternal = null;
             divrow = "firstrow";
-            old = "fifthrow";
+            old = "sixthrow";
             firstRowChild = []
             eachButton = []
             first_opt();
@@ -256,7 +215,7 @@ function callFromPython3(){
             secInternal = null;
             thirdInternal = null;
             divrow = "firstrow";
-            old = "fifthrow";
+            old = "sixthrow";
             firstRowChild = []
             eachButton = []
             first_opt();
@@ -276,11 +235,12 @@ function makeUL(data){
         m = [];
     //'d','do','da','de','di'
     var array = data.split(",")
+    predict = array;
     console.log(typeof(array))
     console.log(array)
     
     for (n = 0; n < array.length; n += 1){
-        m[n] = '<li>' + array[n] + '</li>';
+        m[n] = '<li id="array[n]">' + array[n] + '</li>';
     }
     document.getElementById('prediction').innerHTML = a + m + b;
     
@@ -293,7 +253,7 @@ function first_opt(){
             document.getElementById(old).style.backgroundColor=null;
             document.getElementById(divrow).style.backgroundColor="blue";
             document.getElementById(old).style.boxShadow=null
-            document.getElementById(divrow).style.boxShadow="0 15px 8px -6px #666";
+            document.getElementById(divrow).style.boxShadow="0 10px 6px -4px";
             
             
             if(divrow === "firstrow"){
@@ -315,36 +275,12 @@ function first_opt(){
             }
             else if(divrow === "fifthrow"){
                 old =  "fifthrow"
+                divrow = "sixthrow"
+            }
+            else if(divrow === "sixthrow"){
+                old =  "sixthrow"
                 divrow = "firstrow"
             }
         }, 2000);
     }
 }
-
-
-// function always(){
-//     var {PythonShell} = require('python-shell')
-//     var path = require("path")
-//     setInterval(function(){
-//     document.getElementById("textscreen").value+=data  
-//     var ans = document.getElementById("textscreen").value
-//     var options = {
-//         args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
-//         scriptPath : path.join(__dirname,'../Prediction Module'),
-//     }
-//     var runpython = new PythonShell("Predictive_Keyboard.py", options);
-//     runpython.on('message', function(message){
-//         console.log(message)
-//         var a = '<ul>',
-//         b = '</ul>',
-//         m = [];
-
-//         for (i = 0; i < message[0].length; i += 1){
-//             console.log(message[0][i])
-//             m[i] = '<li>' + message[0][i] + '</li>';
-//         }
-//             document.getElementById('prediction').innerHTML = a + m + b;
-//         })
-//     }, 2000)
-    
-// }
