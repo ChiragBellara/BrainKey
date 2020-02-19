@@ -1,0 +1,6 @@
+spacing issue
+speak button
+disconnected part to show on screen
+word speaking
+word cancelation part need to remove
+Na word replacement buttons
