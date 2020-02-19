@@ -10,48 +10,57 @@ var firstRowChild = [];
 var secRowChild = [];
 var eachButton = []
 var predict=null
-
+var old1=null
+var data1=null
+var num =0
 function prediction(){
-    inPredict = true;
-    var num =0
+    console.log("In prediction")
+    isPredict = true;
+    num =0
     console.log(predict)
+    if(! predictInterval){
     predictInterval=setInterval(function(){
         if(num==0){
-            old = predict[0]
-            data = predict[0]
+            old1 = predict[0]
+            data1 = predict[0]
+            console.log(num+" inside if")
+            console.log(old1+" inside if")
             document.getElementById(predict[0]).style.backgroundColor = "blue";
             document.getElementById(predict[0]).style.boxShadow="0 10px 6px -4px";
         }
-        document.getElementById(old).style.backgroundColor = null;
-        document.getElementById(predict[num]).style.backgroundColor = "blue";
-        document.getElementById(old).style.boxShadow=null;
-        document.getElementById(predict[num]).style.boxShadow="0 10px 6px -4px";
-        old = predict[num];
-        data = old;
-        num = (num+1)%5;
+        else{
+            console.log(num+" inside else")
+            console.log(old1+" inside else")
+            document.getElementById(old1).style.backgroundColor = null;
+            document.getElementById(predict[num]).style.backgroundColor = "blue";
+            document.getElementById(old1).style.boxShadow=null;
+            document.getElementById(predict[num]).style.boxShadow="0 10px 6px -4px";
+        }
+        old1 = predict[num];
+        data1 = old1;
+        num = (num+1)%(predict.length);
     },2000);
+}
 }
 function makePredict(){
     isPredict = false;
     clearInterval(predictInterval);
-    document.getElementById("textscreen").value+=(data + " ") 
-    var options = {
-        args : [path.join(__dirname,'../Prediction Module/Wordlists/mostusedwords.csv'),ans.split(" ").splice(-1)[0]],
-        scriptPath : path.join(__dirname,'../Prediction Module'),
-    }
-    var runpython = new PythonShell("Predictive_Keyboard.py", options);
-    runpython.on('message',function(message){
-        // console.log(typeof(message))
-        makeUL(message);
-        internal = null;
-        secInternal = null;
-        thirdInternal = null;
-        divrow = "firstrow";
-        old = "sixthrow";
-        firstRowChild = []
-        eachButton = []
-        first_opt();
-    })
+    console.log("data1:"+data1)
+    document.getElementById("textscreen").value+=(data1 + " ")
+    makeUL(" ");
+    num1=0
+    old1=null
+    internal = null;
+    secInternal = null;
+    thirdInternal = null;
+    predictInterval = null;
+    divrow = "firstrow";
+    old = "sixthrow";
+    firstRowChild = []
+    eachButton = []
+    data= null
+    console.log("This second")
+    first_opt();
 }
 
 function alarm(){
@@ -240,7 +249,7 @@ function makeUL(data){
     console.log(array)
     
     for (n = 0; n < array.length; n += 1){
-        m[n] = '<li id="array[n]">' + array[n] + '</li>';
+        m[n] = '<li id='+array[n]+'>' + array[n] + '</li>';
     }
     document.getElementById('prediction').innerHTML = a + m + b;
     
