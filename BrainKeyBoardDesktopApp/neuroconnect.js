@@ -1,4 +1,4 @@
-
+/*
 var {PythonShell} = require('python-shell')
 var path = require("path")
 
@@ -46,4 +46,43 @@ runpython.on('message', function(message){
     }
 });
 
-
+*/
+var i =0
+var t =0
+var data=0
+var s = 0
+document.addEventListener('keypress', (event) => {
+    message = event.key;
+    if(message=="c" && t===0){
+        document.getElementById("isconnected").innerHTML = "Connected";
+        document.getElementById("isconnected").style.color = "lightgreen";
+        console.log("Its working");
+        first_opt()
+        t=1;
+    }
+    // else if(message<=50){
+    //     console.log("DO NOTHING")
+    //     console.log(message)
+    // }
+    else if(isPredict){
+        makePredict();
+    }
+    else if(i===0){
+        callFromPython();
+        console.log("Working Python1")
+        i=1;
+    }
+    else if(i===1){
+        callFromPython2();
+        console.log("Working Python2");
+        i=2;
+    }
+    else if(i===2){
+        callFromPython3();
+        console.log("Working Python3")
+        i=0;
+    }else{
+        console.log("WHy not"+message)
+        console.log(i)
+    }
+  })

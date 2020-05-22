@@ -21,12 +21,15 @@ function prediction(){
     if(! predictInterval){
     predictInterval=setInterval(function(){
         if(num==0){
-            old1 = predict[0]
-            data1 = predict[0]
-            console.log(num+" inside if")
-            console.log(old1+" inside if")
+            
+            if(old1){
+                document.getElementById(old1).style.backgroundColor = null;
+                document.getElementById(old1).style.boxShadow=null;
+            }
             document.getElementById(predict[0]).style.backgroundColor = "blue";
             document.getElementById(predict[0]).style.boxShadow="0 10px 6px -4px";
+            old1 = predict[0]
+            data1 = predict[0]
         }
         else{
             console.log(num+" inside else")
@@ -44,9 +47,15 @@ function prediction(){
 }
 function makePredict(){
     isPredict = false;
+    
     clearInterval(predictInterval);
+    var ans = document.getElementById("textscreen").value
+    var lastIndex = ans.lastIndexOf(" ");
     console.log("data1:"+data1)
-    document.getElementById("textscreen").value+=(data1 + " ")
+    var msg = new SpeechSynthesisUtterance(data1);
+    document.getElementById("textscreen").value= ans.substring(0, lastIndex+1) + data1 +" "
+    window.speechSynthesis.speak(msg);
+    
     makeUL(" ");
     num1=0
     old1=null
@@ -172,9 +181,6 @@ function callFromPython3(){
         first_opt();
     }
     else if(data=="switch"){
-        var ans = document.getElementById("textscreen").value
-        var lastIndex = ans.lastIndexOf(" ");
-        document.getElementById("textscreen").value = ans.substring(0, lastIndex);
         internal = null;
         secInternal = null;
         thirdInternal = null;
@@ -206,6 +212,20 @@ function callFromPython3(){
             first_opt();
         })
 
+    }
+    else if(data=="speak"){
+        var ans = document.getElementById("textscreen").value
+        var msg = new SpeechSynthesisUtterance(ans);
+        window.speechSynthesis.speak(msg);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        first_opt()
     }
     else{
         var msg = new SpeechSynthesisUtterance(data);
