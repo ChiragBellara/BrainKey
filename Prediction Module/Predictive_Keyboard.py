@@ -21,11 +21,17 @@ def get_words(filepath):
 
 words = get_words(sys.argv[1])
 autocomplete = AutoComplete(words=words)
+
+words2 = get_words(r"D:\Brain-Keyboard\Prediction Module\Wordlists\usersList.csv")
+autocomplete2 = AutoComplete(words=words2)
+
 currentString=""
 currentString = sys.argv[2]
 if " " in currentString:
     print("End of Word")
 else:
     results = autocomplete.search(word=currentString)
-    print(results)
-    
+    combined = autocomplete2.search(word=currentString)
+    combined.extend(results)
+    flat_list = [item for sublist in combined for item in sublist]
+    print(flat_list)
