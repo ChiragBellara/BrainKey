@@ -22,7 +22,9 @@ def get_words(filepath):
 words = get_words(sys.argv[1])
 autocomplete = AutoComplete(words=words)
 
-words2 = get_words(r"D:\Brain-Keyboard\Prediction Module\Wordlists\usersList.csv")
+words2 = get_words(r"E:\Brain-Keyboard\Prediction Module\Wordlists\usersList.csv")
+# @ Chirag Change Directory from E to D in your case 
+
 autocomplete2 = AutoComplete(words=words2)
 
 currentString=""
@@ -33,5 +35,5 @@ else:
     results = autocomplete.search(word=currentString)
     combined = autocomplete2.search(word=currentString)
     combined.extend(results)
-    flat_list = [item for sublist in combined for item in sublist]
+    flat_list = [item for sublist in combined for item in sublist][:8]
     print(flat_list)
