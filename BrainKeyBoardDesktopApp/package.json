@@ -9,6 +9,7 @@
   "author": "Chirag V. Bellara, Raj S. Madheshia, Pranali S. Patil",
   "license": "MIT",
   "dependencies": {
+    "csv-stringify": "^5.5.0",
     "electron": "^6.0.3",
     "python-shell": "^1.0.8"
   }

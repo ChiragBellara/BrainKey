@@ -13,6 +13,8 @@ var predict=null
 var old1=null
 var data1=null
 var num =0
+
+
 function prediction(){
     console.log("In prediction")
     isPredict = true;
@@ -56,6 +58,17 @@ function makePredict(){
     document.getElementById("textscreen").value= ans.substring(0, lastIndex+1) + data1 +" "
     window.speechSynthesis.speak(msg);
     
+    // Append in csv
+    var options = {
+        args : [data1],
+        scriptPath : path.join(__dirname,'../Prediction Module'),
+    }
+    var runpython = new PythonShell("appendInCSV.py", options);
+    runpython.on('message',function(message){
+        
+    })
+
+
     makeUL(" ");
     num1=0
     old1=null
@@ -140,8 +153,22 @@ function callFromPython3(){
     document.getElementById(data).style.boxShadow=null;
     if(data=="space"){
         var msg = new SpeechSynthesisUtterance("Space");
+        // Append in csv
+        var n =  document.getElementById("textscreen").value.split(" ");
+        lastWord =  n[n.length - 1];
         document.getElementById("textscreen").value+=" "
         window.speechSynthesis.speak(msg);
+         // Append in csv
+        var options = {
+            args : [lastWord],
+            scriptPath : path.join(__dirname,'../Prediction Module'),
+        }
+        var runpython = new PythonShell("appendInCSV.py", options);
+        runpython.on('message',function(message){
+            
+        })
+
+
         internal = null;
         secInternal = null;
         thirdInternal = null;
@@ -216,6 +243,58 @@ function callFromPython3(){
     else if(data=="speak"){
         var ans = document.getElementById("textscreen").value
         var msg = new SpeechSynthesisUtterance(ans);
+        window.speechSynthesis.speak(msg);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        first_opt()
+    }
+    else if(data=="s1"){
+        var msg = new SpeechSynthesisUtterance("Hello. How are you?");
+        window.speechSynthesis.speak(msg);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        first_opt()
+    }
+    else if(data=="s2"){
+        var msg = new SpeechSynthesisUtterance("I need some food");
+        window.speechSynthesis.speak(msg);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        first_opt()
+    }
+    else if(data=="s3"){
+        var msg = new SpeechSynthesisUtterance("I need water");
+        window.speechSynthesis.speak(msg);
+        internal = null;
+        secInternal = null;
+        thirdInternal = null;
+        divrow = "firstrow";
+        old = "sixthrow";
+        firstRowChild = []
+        eachButton = []
+        data= null
+        first_opt()
+    }
+    else if(data=="s4"){
+        var msg = new SpeechSynthesisUtterance("want to go Washroom");
         window.speechSynthesis.speak(msg);
         internal = null;
         secInternal = null;
