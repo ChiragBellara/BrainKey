@@ -28,8 +28,9 @@ function prediction(){
                 document.getElementById(old1).style.backgroundColor = null;
                 document.getElementById(old1).style.boxShadow=null;
             }
-            document.getElementById(predict[0]).style.backgroundColor = "blue";
+            document.getElementById(predict[0]).style.backgroundColor = "green";
             document.getElementById(predict[0]).style.boxShadow="0 10px 6px -4px";
+            document.getElementById(predict[0]).style.color="white"
             old1 = predict[0]
             data1 = predict[0]
         }
@@ -37,9 +38,11 @@ function prediction(){
             console.log(num+" inside else")
             console.log(old1+" inside else")
             document.getElementById(old1).style.backgroundColor = null;
-            document.getElementById(predict[num]).style.backgroundColor = "blue";
+            document.getElementById(old1).style.color="black"
+            document.getElementById(predict[num]).style.backgroundColor = "green";
             document.getElementById(old1).style.boxShadow=null;
             document.getElementById(predict[num]).style.boxShadow="0 10px 6px -4px";
+            document.getElementById(predict[num]).style.color="white"
         }
         old1 = predict[num];
         data1 = old1;
@@ -136,11 +139,13 @@ function callFromPython2(){
         thirdInternal = setInterval(function(){
             document.getElementById(data).style.backgroundColor=null;
             document.getElementById(data).style.boxShadow=null;
+            document.getElementById(data).style.color="black"
             btn= count%3
             count= count+1;
             data = eachButton[btn]
            
             document.getElementById(data).style.backgroundColor="green";
+            document.getElementById(data).style.color="white"
             document.getElementById(data).style.boxShadow="0 10px 6px -4px";
         },2000);
     }
@@ -151,6 +156,7 @@ function callFromPython3(){
     clearInterval(thirdInternal);
     document.getElementById(data).style.backgroundColor=null;
     document.getElementById(data).style.boxShadow=null;
+    document.getElementById(data).style.color="black"
     if(data=="space"){
         var msg = new SpeechSynthesisUtterance("Space");
         // Append in csv
@@ -340,18 +346,13 @@ function makeUL(data){
     console.log(data)
     var a = '<ul>'
         b = '</ul>'
-        m = [];
-    //'d','do','da','de','di'
+        m = "";
     var array = data.split(",")
     predict = array;
-    console.log(typeof(array))
-    console.log(array)
-    
     for (n = 0; n < array.length; n += 1){
-        m[n] = '<li id='+array[n]+'>' + array[n] + '</li>';
+        m = m+'<li id='+array[n]+'>' + array[n] + '</li>'
     }
     document.getElementById('prediction').innerHTML = a + m + b;
-    
 }
 
 function first_opt(){
