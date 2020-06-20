@@ -1,0 +1,4 @@
+fast_autocomplete
+pandas
+jupyter notebook
+matplotlib
