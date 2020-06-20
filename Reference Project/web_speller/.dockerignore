@@ -1,7 +1,0 @@
-.*
-!.coveragerc
-!.env
-!.pylintrc
-
-Dockerfile
-compose/**
