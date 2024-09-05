@@ -20,13 +20,13 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
 ## Overview
-BrainKey is a virtual keyboard that enables individuals suffering from conditions like Amyotrophic Lateral Sclerosis (ALS) and Dysarthria to communicate using their eye blinks. Leveraging Brain-Computer Interface (BCI) technology and EEG signals, the system captures eye blink patterns to allow users to type and communicate. This project is built using Electron JS and utilizes the Neurosky Mindwave Mobile 2 headset.
+BrainKey is a virtual keyboard that enables individuals suffering from Amyotrophic Lateral Sclerosis (ALS) and Dysarthria to communicate using eye blinks. Leveraging Brain-Computer Interface (BCI) technology and EEG signals, the system captures eye blink patterns to allow users to type and communicate. This project is built using Electron JS and utilizes the Neurosky Mindwave Mobile 2 headset.
 
 ## Features
 - **Eye Blink-Based Typing:** Allows users to type alphabetically using intentional eye blinks.
 - **Word Prediction:** Provides a list of predicted words as the user types, minimizing the time required to form sentences.
 - **Emergency Help Button:** The system includes a help button to sound an alarm in case of emergencies, accessible via three intentional eye blinks
-- **Predefined Sentence Buttons:** Allows for customization of frequently used sentences, reducing the need for repetitive typing.
+- **Predefined Sentence Buttons:** Allows to customize frequently used sentences, reducing the need for repetitive typing.
 - **Low-Latency Interface:** Requires a maximum of three blinks to select any character, ensuring fast and accurate typing.
 
 ## System Architecture
@@ -36,3 +36,27 @@ BrainKey is a virtual keyboard that enables individuals suffering from condition
 #### Software
   - Electron JS: The desktop application built using Electron JS includes a virtual keyboard, word prediction, and utility buttons.
   - Blink Detection and Processing: Eye blink signals are processed in real-time, and the system distinguishes between different types of blinks to execute typing operations.
+
+## How it Works
+<div align="center">
+    <img alt="image" src="https://github.com/user-attachments/assets/cbd50b0e-76ff-4643-ae40-f04d26f1099e">
+    <div>General workflow of the application.</div>
+</div>
+</br>
+
+- **Connect the EEG headset:** The user wears the Neurosky Mindwave Mobile 2 headset, which captures eye blink signals.
+- **Blink detection:** The application detects intentional blinks and categorizes them into a sequence to select characters.
+- **Character selection:** Using three blinks, the system selects the desired row, side (left or right), and finally the character.
+- **Word prediction:** As the user types, the system updates a list of probable words to reduce typing time.
+- **Sentence typing:** Users can customize up to four frequently used sentences for quick access.
+</br>
+<div align="center">
+    <img alt="image" src="https://github.com/user-attachments/assets/6ab27e19-ec83-4f00-a67a-11985e2c3f92">
+    <div>Proposed keyboard layout for the application.</div>
+</div>
+</br>
+
+## Future Enhancements
+- **Personalized Blink Strength Thresholds:** User-specific thresholds for eye blink strength can be incorporated for better accuracy.
+- **Multiple Language Support:** Adding support for multiple languages to expand the system's utility.
+- **BCI-based Gaming and Activities:** Potential for developing games and activities that enhance users' attention and meditation abilities.
