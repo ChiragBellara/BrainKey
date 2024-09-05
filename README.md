@@ -56,12 +56,18 @@ BrainKey is a virtual keyboard that enables individuals suffering from Amyotroph
 </div>
 </br>
 
+### Significance of Keyboard Layout
+- **Help Button:** Designed for patients who are unable to communicate verbally, the help button is located in the first row of the virtual keyboard. When selected, it triggers an alarm to alert caregivers or people nearby in case of an emergency.
+- **Switch Button:** This button allows the user to toggle between the keyboard and the word prediction box, providing seamless switching between typing and predictive text.
+- **Speak Button:** Once text is entered into the text box, the speak button enables the system to vocalize the written content aloud, allowing the user to communicate their message audibly.
+- **Customizable Sentence Buttons:** Located in the last row of the keyboard, these four buttons can be programmed to store frequently used phrases. Upon selection, the entire sentence is spoken aloud without the need for manual typing. For example, the "Hi" button (last row, third column) can be programmed to say: "Hello, Hi. How are you?" Users can configure these buttons with phrases tailored to their specific needs, streamlining communication.
+
 ## Future Enhancements
 - **Personalized Blink Strength Thresholds:** User-specific thresholds for eye blink strength can be incorporated for better accuracy.
 - **Multiple Language Support:** Adding support for multiple languages to expand the system's utility.
 - **BCI-based Gaming and Activities:** Potential for developing games and activities that enhance users' attention and meditation abilities.
 
 ## Team
-<a href="https://github.com/ChiragBellara/Brain-Keyboard/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ChiragBellara/Brain-Keyboard" />
+<a href="https://github.com/ChiragBellara/BrainKey/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ChiragBellara/BrainKey" />
 </a>
