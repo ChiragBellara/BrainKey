@@ -60,3 +60,8 @@ BrainKey is a virtual keyboard that enables individuals suffering from Amyotroph
 - **Personalized Blink Strength Thresholds:** User-specific thresholds for eye blink strength can be incorporated for better accuracy.
 - **Multiple Language Support:** Adding support for multiple languages to expand the system's utility.
 - **BCI-based Gaming and Activities:** Potential for developing games and activities that enhance users' attention and meditation abilities.
+
+## Team
+<a href="https://github.com/ChiragBellara/Brain-Keyboard/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ChiragBellara/Brain-Keyboard" />
+</a>
